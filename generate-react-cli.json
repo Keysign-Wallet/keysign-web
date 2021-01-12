@@ -2,14 +2,14 @@
   "usesTypeScript": true,
   "usesCssModule": false,
   "cssPreprocessor": "scss",
-  "testLibrary": "Testing Library",
+  "testLibrary": "None",
   "component": {
     "default": {
       "path": "src/components",
       "withStyle": true,
-      "withTest": true,
-      "withStory": true,
-      "withLazy": true
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     }
   }
 }
