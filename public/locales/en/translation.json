@@ -1,1 +1,6 @@
-{  "title": "Welcome to Keysign",  "description": {    "part1": "Keysign web wallet"  }}
+{
+  "title": "Welcome to Keysign",
+  "description": {
+    "part1": "Keysign web wallet"
+  }
+}
