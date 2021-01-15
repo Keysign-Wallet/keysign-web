@@ -9,3 +9,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+$colors: (
+  'primary': #f36747,
+  'grey': #626262,
+  'light': #ffffff,
+  'dark': #222222,
+);
+
+@mixin background-keysign($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+  #{$parent}-i {
+    background-color: $color !important;
+  }
+}
+
+@mixin text-keysign($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  #{$parent}-i {
+    color: $color !important;
+  }
+}
+
+@each $name, $color in $colors {
+  @include background-keysign('.background-keysign-#{$name}', $color);
+}
+
+@each $name, $color in $colors {
+  @include text-keysign('.text-keysign-#{$name}', $color);
+}
