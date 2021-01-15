@@ -40,6 +40,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "prettier --write . && eslint .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

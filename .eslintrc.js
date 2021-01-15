@@ -27,12 +27,7 @@ module.exports = {
     'import-helpers/order-imports': [
       'error',
       {
-        groups: [
-          '/^react/',
-          'module',
-          ['parent', 'sibling', 'index'],
-          '/.*(css|scss)$/',
-        ],
+        groups: ['/^react/', 'module', ['parent', 'sibling', 'index'], '/.*(css|scss)$/'],
         newlinesBetween: 'always',
       },
     ],
