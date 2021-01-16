@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import logo from '../../assets/images/logo.png';
+
 import './Layout.scss';
 
 const Layout: React.FC = ({ children }) => {
@@ -8,10 +10,10 @@ const Layout: React.FC = ({ children }) => {
     <div className="Layout">
       <div className="navBar">
         <NavLink className="navBar__Logo" to="/about">
-          <img alt="Keysign Logo" className="navBar__Logo__img" src={'/'} />
+          <img alt="Keysign Logo" className="navBar__Logo__img" src={logo} />
         </NavLink>
-        <h1>Keysign</h1>
-        <ul className="navBar__items-list">
+        <span className="heading">Keysign</span>
+        <ul className="navBar__items-list text-keysign-grey">
           <li>
             <NavLink to="/faq" activeClassName="selected">
               FAQ
@@ -28,11 +30,11 @@ const Layout: React.FC = ({ children }) => {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/login" activeClassName="selected">
-          <button>Login</button>
+        <NavLink to="/login" activeClassName="selected" className="navBar__button-link-1">
+          <button className="button">Login</button>
         </NavLink>
-        <NavLink to="/downloads" activeClassName="selected">
-          <button>Download</button>
+        <NavLink to="/downloads" activeClassName="selected" className="navBar__button-link-2">
+          <button className="button">Download</button>
         </NavLink>
       </div>
       {children}

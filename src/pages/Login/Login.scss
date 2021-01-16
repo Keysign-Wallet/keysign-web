@@ -1,4 +1,7 @@
 .Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__wrapper {
     border: 1px solid;
     border-radius: 4px;
