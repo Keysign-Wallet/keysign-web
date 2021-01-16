@@ -18,7 +18,7 @@ const Layout: React.FC = ({ children }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/faq" activeClassName="selected">
+            <NavLink to="/integration" activeClassName="selected">
               Integration
             </NavLink>
           </li>
