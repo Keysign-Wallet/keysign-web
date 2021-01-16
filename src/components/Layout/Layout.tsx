@@ -4,8 +4,13 @@ import './Layout.scss';
 const Layout: React.FC = ({ children }) => {
   return (
     <div className="Layout">
-      <h1>NAVIGATION</h1>
+      <div className="navBar">
+        <h1>Navigation Bat</h1>
+      </div>
       {children}
+      <div className="footer">
+        <h1>Footer</h1>
+      </div>
     </div>
   );
 };
