@@ -15,6 +15,7 @@ $colors: (
   'grey': #626262,
   'light': #ffffff,
   'dark': #222222,
+  'ash': #e0e0e0,
 );
 
 @mixin background-keysign($parent, $color) {
@@ -35,10 +36,47 @@ $colors: (
   }
 }
 
+@mixin border-keysign($parent, $color) {
+  #{$parent} {
+    border-color: $color;
+  }
+  #{$parent}-i {
+    border-color: $color !important;
+  }
+}
+
 @each $name, $color in $colors {
   @include background-keysign('.background-keysign-#{$name}', $color);
 }
 
 @each $name, $color in $colors {
   @include text-keysign('.text-keysign-#{$name}', $color);
+}
+
+@each $name, $color in $colors {
+  @include border-keysign('.border-keysign-#{$name}', $color);
+}
+
+.input {
+  height: 45px;
+  font-size: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+  border-color: map-get($colors, ash);
+  color: map-get($colors, grey);
+  border-style: solid;
+  border-radius: 4px;
+}
+
+.button {
+  height: 45px;
+  background-color: map-get($colors, primary);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  color: map-get($colors, light);
+  &:hover {
+    cursor: pointer;
+  }
 }

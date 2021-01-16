@@ -1,0 +1,28 @@
+.LoginForm {
+  text-align: center;
+  width: 100%;
+  h1 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 20px;
+  }
+  h2 {
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  &__inputs-wrapper {
+    input {
+      display: block;
+      width: 100%;
+    }
+    & > :nth-child(1) {
+      margin-bottom: 20px;
+    }
+    & > :nth-child(2) {
+      margin-bottom: 40px;
+    }
+  }
+}

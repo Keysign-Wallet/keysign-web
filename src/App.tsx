@@ -9,7 +9,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Faq from './pages/Faq/Faq';
 import Landing from './pages/Landing/Landing';
-import Login from './pages/Login/Login';
+import Login from './pages/Login';
 import Privacy from './pages/Privacy/Privacy';
 import Register from './pages/Register/Register';
 import Setup from './pages/Setup/Setup';
