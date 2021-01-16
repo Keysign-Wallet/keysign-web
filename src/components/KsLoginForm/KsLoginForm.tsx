@@ -1,13 +1,19 @@
 import React from 'react';
+
+import { ReactComponent as LoginSvg } from '../../assets/svgs/login.svg';
+
 import './KsLoginForm.scss';
 
 const KsLoginForm: React.FC = () => (
   <div className="KsLoginForm">
-    <h1 className="text-keysign-dark">Keysign Login</h1>
-    <p>
-      Here, goes the if statement to detect if keysign is active. If keysign if active show input and button else add
-      text please install keysign extension.
-    </p>
+    <h1 className="text-keysign-dark heading">Keysign Login</h1>
+    <p className="paragraph">Hey there, welcome back</p>
+    <div className="KsLoginForm__input-wrapper">
+      <input type="text" className="input" placeholder="Account Number" />
+      <button className="button">
+        <LoginSvg />
+      </button>
+    </div>
   </div>
 );
 

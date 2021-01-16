@@ -80,3 +80,17 @@ $colors: (
     cursor: pointer;
   }
 }
+
+.heading {
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.paragraph {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}

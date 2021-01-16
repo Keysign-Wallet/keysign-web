@@ -1,10 +1,18 @@
 .KsLoginForm {
   text-align: center;
   width: 100%;
-  h1 {
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-top: 0;
-    font-size: 20px;
+  &__input-wrapper {
+    display: flex;
+    & > :nth-child(1) {
+      width: 100%;
+    }
+    & > :nth-child(2) {
+      width: fit-content;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 43px;
+    }
   }
 }
