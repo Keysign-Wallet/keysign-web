@@ -12,12 +12,28 @@ const Layout: React.FC = ({ children }) => {
         </NavLink>
         <h1>Keysign</h1>
         <ul className="navBar__items-list">
-          <li>FAQ</li>
-          <li>Integration</li>
-          <li>Contact</li>
+          <li>
+            <NavLink to="/faq" activeClassName="selected">
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/faq" activeClassName="selected">
+              Integration
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" activeClassName="selected">
+              Contact
+            </NavLink>
+          </li>
         </ul>
-        <button>Login</button>
-        <button>Download</button>
+        <NavLink to="/login" activeClassName="selected">
+          <button>Login</button>
+        </NavLink>
+        <NavLink to="/downloads" activeClassName="selected">
+          <button>Download</button>
+        </NavLink>
       </div>
       {children}
     </div>
