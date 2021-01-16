@@ -7,6 +7,8 @@
     margin: 0 auto;
     @media (max-width: 769px) {
       flex-direction: column;
+      padding: 0 20px;
+      width: fit-content;
     }
   }
   &__illustration {
@@ -16,6 +18,9 @@
       width: 100%;
       min-height: 100%;
       margin: 0 auto;
+    }
+    @media (max-width: 769px) {
+      display: none;
     }
   }
   &__right-wrapper {
