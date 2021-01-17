@@ -6,15 +6,11 @@
 }
 
 p {
-  //font-family: Graphik;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height, or 150% */
-
   letter-spacing: 0.2px;
-
   color: #626262;
 }
 
@@ -26,42 +22,39 @@ p {
 
 .Faq-title {
   width: 144px;
-
   font-style: normal;
   font-weight: normal;
   font-size: 72px;
   line-height: 88px;
   margin: 30px 0 0 0;
-
-  /* identical to box height, or 122% */
   letter-spacing: 0.2px;
 }
 
 .Faq-description {
   width: 373px;
-  height: 48px;
 }
 
 .Faq-nav {
-  width: 296px;
-  height: 198px;
-  left: 165px;
-  top: 268px;
   ul {
-    padding-inline-start: 20px;
-    border-left: solid #000000;
+    padding-inline-start: 0px;
+    border-left: solid #E0E0E0;
     border-width: 0 1px;
-  }
-  li {
-    list-style: none;
+    border-width: 0 2px transparent;
+    & li {
+      list-style: none;
+    }
   }
   a {
     text-decoration: none;
+    padding-left: 20px;
     color: #363A41;
+    &:hover {
+      padding-left: 17px;
+      border-width: 0 2px;
+      border-left: solid #363A41;
+    }
   }
-  a:target {
-    background-color: #990000;
-  }
+
 }
 
 .Faq-content {
