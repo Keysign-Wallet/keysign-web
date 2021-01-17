@@ -1,47 +1,70 @@
 .Faq {
   background: #FFFFFF;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
-.faq-title {
-  position: absolute;
+p {
+  //font-family: Graphik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.2px;
+
+  color: #626262;
+}
+
+.Column {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+}
+
+.Faq-title {
   width: 144px;
-  height: 88px;
-  left: 164px;
-  top: 102px;
 
   font-style: normal;
   font-weight: normal;
   font-size: 72px;
   line-height: 88px;
+  margin: 30px 0 0 0;
 
   /* identical to box height, or 122% */
   letter-spacing: 0.2px;
 }
 
-.faq-description {
-  position: absolute;
+.Faq-description {
   width: 373px;
   height: 48px;
-  left: 165px;
-  top: 190px;
 }
 
-.faq-nav {
-  position: absolute;
+.Faq-nav {
   width: 296px;
   height: 198px;
   left: 165px;
   top: 268px;
+  ul {
+    padding-inline-start: 20px;
+    border-left: solid #000000;
+    border-width: 0 1px;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: #363A41;
+  }
+  a:target {
+    background-color: #990000;
+  }
 }
 
-.faq-nav li {
-  list-style: none;
-}
-
-.faq-content {
-  position: absolute;
+.Faq-content {
   width: 713px;
   height: 1103px;
   left: 562px;
@@ -54,10 +77,9 @@
   padding: 45px;
 }
 
-.faq-svg {
-  position: absolute;
+.Faq-svg {
   width: 295px;
-  height: 190px;
-  left: 771px;
-  top: 41px;
+  min-height: 190px;
+  padding-bottom: 5%;
+  padding-left: 25%;
 }
