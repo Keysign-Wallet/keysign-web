@@ -13,7 +13,7 @@ type TogglerContainerProps = {
 
 const TogglerContainer: React.FC<TogglerContainerProps> = ({ isOn = false, onToggle, onToggleOff, onToggleOn }) => {
   const [on, setOn] = useState(isOn);
-  const togglerStatusClass = on ? 'background-keysign-primary Toggler__on' : 'background-keysign-light';
+  const togglerStatusClass = `Toggler ${on ? 'background-keysign-primary Toggler__on' : 'background-keysign-ash-dark'}`;
 
   const onTogglerClick = (e: TogglerEvent) => {
     if (on) {

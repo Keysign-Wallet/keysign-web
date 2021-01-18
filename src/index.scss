@@ -11,11 +11,12 @@ code {
 }
 
 $colors: (
-  'primary': #f36747,
+  'primary': #1565d8,
   'grey': #626262,
   'light': #ffffff,
   'dark': #222222,
   'ash': #e0e0e0,
+  'ash-dark': #c3cbcd,
 );
 
 @mixin background-keysign($parent, $color) {
