@@ -11,7 +11,7 @@ const Setup: React.FC = () => {
         <h1 className="heading">You’re almost done</h1>
         <p className="paragraph">Finish setting up your account</p>
         <form className="Setup__form">
-          <input type="text" className="input" placeholder="Username" />
+          {/* <input type="text" className="input" placeholder="Username" /> */}
           <input type="text" className="input" placeholder="Email" />
         </form>
         <div className="Setup__toggler-row">
