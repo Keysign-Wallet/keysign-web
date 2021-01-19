@@ -1,2 +1,65 @@
 .Faq {
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 88px;
+    margin: 30px 0 0 0;
+    letter-spacing: 0.2px;
+  }
+  &__column {
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    & > img {
+      width: 295px;
+      min-height: 190px;
+      padding-bottom: 5%;
+      padding-left: 25%;
+    }
+    & > p {
+      width: 373px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+      color: #626262;
+    }
+    ul {
+      padding-inline-start: 0px;
+      border-left: solid #e0e0e0;
+      border-width: 0 1px;
+      border-width: 0 2px transparent;
+      list-style: none;
+      li {
+        font-size: 1.5em;
+        margin: 1em 0 1em 0;
+        a {
+          text-decoration: none;
+          padding-left: 20px;
+          color: #363a41;
+          &:hover {
+            font-weight: bold;
+            padding-left: 17px;
+            border-width: 0 2px;
+            border-left: solid #363a41;
+          }
+        }
+      }
+    }
+  }
+  &__content {
+    width: 713px;
+    height: 1103px;
+    left: 562px;
+    top: 268px;
+
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 45px;
+  }
 }
