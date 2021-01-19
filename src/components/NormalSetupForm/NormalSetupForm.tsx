@@ -11,7 +11,7 @@ const NormalSetupForm: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
       <p className="paragraph text-keysign-grey">Finish setting up your account</p>
       <form className="NormalSetupForm__form">
         {/* <input type="text" className="input" placeholder="Username" /> */}
-        <input type="text" className="input" placeholder="Email" />
+        <input type="email" className="input" placeholder="Email" />
       </form>
       <div className="NormalSetupForm__toggler-row">
         <span className="text-keysign-dark">
