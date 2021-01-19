@@ -13,7 +13,7 @@ import Landing from './pages/Landing/Landing';
 import Login from './pages/Login';
 import Privacy from './pages/Privacy/Privacy';
 import Register from './pages/Register/Register';
-import Setup from './pages/Setup/Setup';
+import Setup from './pages/Setup';
 import Tos from './pages/Tos/Tos';
 import Wallet from './pages/Wallet/Wallet';
 

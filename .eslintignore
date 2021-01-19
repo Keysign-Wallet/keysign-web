@@ -1,4 +1,4 @@
-src/trustless
+public/trustless
 node_modules
 src/serviceWorker.ts
 build
