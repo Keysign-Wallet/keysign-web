@@ -8,10 +8,9 @@ const Landing: React.FC = () => {
   const [keysign, setKeysign] = useState({});
   useEffect(() => {
     window.addEventListener('load', () => {
-      console.log(window);
       getKeysign(
-              (res: any) => setKeysign(res),
-              (err: any) => console.log(err)
+        (res: any) => setKeysign(res),
+        (err: any) => console.log(err)
       );
     });
     console.log(keysign);
