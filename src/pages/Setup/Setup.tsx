@@ -14,6 +14,7 @@ const Setup: React.FC<{ onToggle: () => void; show2fa: boolean }> = ({ onToggle,
         <Expandable open={show2fa}>
           <Setup2faForm />
         </Expandable>
+        <button className="button Setup__button">Complete Setup</button>
       </div>
     </div>
   );
