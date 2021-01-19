@@ -1,0 +1,17 @@
+.NormalSetupForm {
+  &__form {
+    & > * {
+      width: 100%;
+    }
+    & > :nth-child(odd) {
+      margin-bottom: 20px;
+    }
+  }
+  &__toggler-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+    align-items: center;
+    font-weight: bold;
+  }
+}
