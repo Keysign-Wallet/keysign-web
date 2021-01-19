@@ -1,7 +1,4 @@
-public/trustless/aes.min.js
-public/trustless/axios.min.js
-public/trustless/crypto-js.min.js
-public/trustless/tnb.min.js
+public/trustless/*
 public/index.html
 node_modules
 src/serviceWorker.ts
