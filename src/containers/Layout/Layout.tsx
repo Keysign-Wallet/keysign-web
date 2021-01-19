@@ -9,7 +9,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <div className="Layout">
       <div className="navBar">
-        <NavLink className="navBar__Logo" to="/about">
+        <NavLink className="navBar__Logo" to="/">
           <img alt="Keysign Logo" className="navBar__Logo__img" src={logo} />
         </NavLink>
         <span className="heading">Keysign</span>

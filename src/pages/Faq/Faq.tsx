@@ -1,43 +1,33 @@
 import React from 'react';
 import './Faq.scss';
 
-import { ReactComponent as FaqSvg } from '../../assets/svgs/faq.svg';
+import faqSvg from '../../assets/svgs/faq.svg';
 
 const Faq: React.FC = () => (
   <div className="Faq">
-    <div className="Column">
-      <h1 className="Faq-title">FAQ</h1>
-      <p className="Faq-description">
+    <div className="Faq__column">
+      <h1>FAQ</h1>
+      <p className="paragraph">
         If you’re new to Keysign, this guide will help you learn more about the platform and it’s features
       </p>
-      <div className="Faq-nav">
-        <ul>
-          <li>
-            <h2>
-              <a href="#gettingstarted">Getting started with Keysign</a>
-            </h2>
-          </li>
-          <li>
-            <h2>
-              <a href="#payments">Payments on Keysign</a>
-            </h2>
-          </li>
-          <li>
-            <h2>
-              <a href="#howtolink">How to link wallet</a>
-            </h2>
-          </li>
-          <li>
-            <h2>
-              <a href="#problems">Blockchain Problems?</a>
-            </h2>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <a href="#gettingstarted">Getting started with Keysign</a>
+        </li>
+        <li>
+          <a href="#payments">Payments on Keysign</a>
+        </li>
+        <li>
+          <a href="#howtolink">How to link wallet</a>
+        </li>
+        <li>
+          <a href="#problems">Blockchain Problems?</a>
+        </li>
+      </ul>
     </div>
-    <div className="Column">
-      <FaqSvg className="Faq-svg" />
-      <div className="Faq-content">
+    <div className="Faq__column">
+      <img src={faqSvg} alt="faq-illustration" />
+      <div className="Faq__content">
         <h3 id="gettingstarted">Getting started with Keysign</h3>
         <p>
           Putting Wallet keys directly into websites is not safe or secure. On some blockchains, you never have to enter
