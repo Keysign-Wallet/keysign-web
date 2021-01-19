@@ -9,7 +9,13 @@ import ExtensionHelperService from '../../services/extensionHelperService';
 
 const Login: React.FC = () => {
   const downloadText = 'You must download keysign';
-  const extensionExists = ExtensionHelperService.checkIfExtensionExists();
+  const checkExtension = async () => {
+    const extensionExists = await ExtensionHelperService.checkIfExtensionExists();
+    return extensionExists;
+  };
+  checkExtension();
+  const extensionExists = false;
+  console.log(extensionExists);
   return (
     <div className="Login">
       <div className="border-keysign-ash Login__wrapper">
