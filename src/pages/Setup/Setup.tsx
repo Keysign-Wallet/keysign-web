@@ -1,26 +1,25 @@
 import React from 'react';
 
-import Toggler from '../../components/common/Toggler';
+import NormalSetupForm from '../../components/NormalSetupForm';
+import Setup2faForm from '../../components/Setup2faForm';
+import Expandable from '../../components/common/Expandable';
 
 import './Setup.scss';
 
-const Setup: React.FC = () => {
+import left from '../../assets/images/left-frame.png';
+import right from '../../assets/images/right-frame.png';
+
+const Setup: React.FC<{ onToggle: () => void; show2fa: boolean }> = ({ onToggle, show2fa }) => {
   return (
     <div className="Setup">
+      <img src={left} alt="left" className="Setup__top-left" />
+      <img src={right} alt="right" className="Setup__bottom-right" />
       <div className="Setup__wrapper border-keysign-ash">
-        <h1 className="heading">You’re almost done</h1>
-        <p className="paragraph">Finish setting up your account</p>
-        <form className="Setup__form">
-          {/* <input type="text" className="input" placeholder="Username" /> */}
-          <input type="text" className="input" placeholder="Email" />
-        </form>
-        <div className="Setup__toggler-row">
-          <span className="text-keysign-dark">
-            Setup 2FA<span className="text-keysign-grey"> (Optional)</span>
-          </span>
-          <Toggler />
-        </div>
-        <button className="button">Complete Setup</button>
+        <NormalSetupForm onToggle={onToggle} />
+        <Expandable open={show2fa}>
+          <Setup2faForm />
+        </Expandable>
+        <button className="button Setup__button">Complete Setup</button>
       </div>
     </div>
   );
