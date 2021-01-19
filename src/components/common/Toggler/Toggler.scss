@@ -12,6 +12,7 @@
   box-sizing: border-box;
   margin: 0;
   outline: none;
+  transition: 0.3s;
   &:hover {
     cursor: pointer;
   }
@@ -23,6 +24,8 @@
     margin-left: 0;
   }
   &__on {
-    margin-left: $circle-width - (2 * $padding) !important;
+    div {
+      margin-left: $circle-width - (2 * $padding) !important;
+    }
   }
 }
