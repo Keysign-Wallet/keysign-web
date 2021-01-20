@@ -6,16 +6,16 @@ import KsLoginForm from '../../components/KsLoginForm';
 import human from '../../assets/images/human-at-door.png';
 import './Login.scss';
 import ExtensionHelperService from '../../services/extensionHelperService';
+import LoggerService from '../../services/loggerService';
 
 const Login: React.FC = () => {
-  const downloadText = 'You must download keysign';
-  const checkExtension = async () => {
-    const extensionExists = await ExtensionHelperService.checkIfExtensionExists();
-    return extensionExists;
-  };
-  checkExtension();
+  // const checkExtension = async () => {
+  //   const extensionExists = await ExtensionHelperService.checkIfExtensionExists();
+  //   return extensionExists;
+  // };
+  // checkExtension();
   const extensionExists = false;
-  console.log(extensionExists);
+  LoggerService.log(extensionExists);
   return (
     <div className="Login">
       <div className="border-keysign-ash Login__wrapper">

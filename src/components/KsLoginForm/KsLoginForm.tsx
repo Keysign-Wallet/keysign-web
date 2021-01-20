@@ -4,11 +4,12 @@ import { ReactComponent as LoginSvg } from '../../assets/svgs/login.svg';
 
 import './KsLoginForm.scss';
 import ExtensionHelperService from '../../services/extensionHelperService';
+import LoggerService from '../../services/loggerService';
 
 const KsLoginForm: React.FC = () => {
   const [accountNumber, setAccountNumber] = useState('');
   const validateLogin = () => {
-    ExtensionHelperService.validateKSLogin(accountNumber).then((r) => console.log(r));
+    ExtensionHelperService.validateKSLogin(accountNumber).then((r) => LoggerService.log(r));
   };
 
   return (
