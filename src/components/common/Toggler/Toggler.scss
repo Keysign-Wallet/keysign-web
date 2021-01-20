@@ -23,6 +23,8 @@
     margin-left: 0;
   }
   &__on {
-    margin-left: $circle-width - (2 * $padding) !important;
+    div {
+      margin-left: $circle-width - (2 * $padding) !important;
+    }
   }
 }

@@ -1,0 +1,36 @@
+.Setup2fa {
+  margin-top: 40px;
+  a {
+    text-decoration: none;
+  }
+  &__barcode {
+    margin: 40px 0px;
+  }
+  &__inputs-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    & > * {
+      flex: 1 1 0;
+      width: 0px;
+      -moz-appearance: textfield;
+      text-align: center;
+      margin: 0 5px;
+      font-weight: bold;
+      font-size: 20px !important;
+      color: inherit;
+      padding: 8px 0px !important;
+    }
+    // & > :last-child {
+    //   margin-right: 0;
+    // }
+    // & > :nth-child(1) {
+    //   margin-left: 0;
+    // }
+    & > *::-webkit-outer-spin-button,
+    & > *::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

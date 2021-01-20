@@ -9,8 +9,8 @@ type TogglerProps = {
 
 const Toggler: React.FC<TogglerProps> = ({ onClick, togglerStatusClass }) => {
   return (
-    <button className="Toggler" onClick={onClick}>
-      <div className={togglerStatusClass} />
+    <button className={togglerStatusClass} onClick={onClick}>
+      <div className="background-keysign-light" />
     </button>
   );
 };

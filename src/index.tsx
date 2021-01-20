@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import './index.scss';
 import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+import * as serviceWorker from './serviceWorker';
 import App from './App';
 
-import './index.scss';
-import * as serviceWorker from './serviceWorker';
-
 const cache = new InMemoryCache();
-const link = new HttpLink({
+const link: any = new HttpLink({
   uri: 'http://localhost:5555/graphql',
 });
 
-const client = new ApolloClient({
+const client: any = new ApolloClient({
   cache,
   link,
 });
