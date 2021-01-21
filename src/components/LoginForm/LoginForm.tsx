@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import './LoginForm.scss';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import { useHistory } from 'react-router-dom';
 import BrowserStorageService from '../../services/browserStorageService';
 import LoggerService from '../../services/loggerService';
 import EncryptionService from '../../services/encryptionService';
-import { useHistory } from "react-router-dom";
 import { checkValidSignInPair } from '../../utils/handshake';
 
 const LOGIN_QUERY = gql`
@@ -20,33 +20,33 @@ const LOGIN_QUERY = gql`
 
 const LoginForm: React.FC = () => {
   const [login, { data }] = useMutation(LOGIN_QUERY);
-  let history = useHistory();
+  const history = useHistory();
 
   const [accountNumber, updateAccountNumber] = useState('');
   const [signingKey, updateSigningKey] = useState('');
   const loginHandler = (e: any) => {
     e.preventDefault();
-    if(checkValidSignInPair( accountNumber, signingKey)) {
+    if (checkValidSignInPair(accountNumber, signingKey)) {
       login({ variables: { accountNumber } })
-              .then((res) => {
-                LoggerService.log(res);
-                LoggerService.log(data);
-                BrowserStorageService.setItem('token', data.login.token);
-                const encryptedSigningKey = EncryptionService.encryptData(signingKey);
-                BrowserStorageService.setItem(signingKey, encryptedSigningKey);
-                BrowserStorageService.setItem('keysign', false);
-                BrowserStorageService.setItem('accountNumber', accountNumber);
-                if (data.newUser) {
-                  // send them to account setup.
-                  history.push('/setup');
-                } else {
-                  // send them to wallet page.
-                  history.push('/wallet');
-                }
-              })
-              .catch((err) => {
-                LoggerService.log(err);
-              });
+        .then((res) => {
+          LoggerService.log(res);
+          LoggerService.log(data);
+          BrowserStorageService.setItem('token', data.login.token);
+          const encryptedSigningKey = EncryptionService.encryptData(signingKey);
+          BrowserStorageService.setItem(signingKey, encryptedSigningKey);
+          BrowserStorageService.setItem('keysign', false);
+          BrowserStorageService.setItem('accountNumber', accountNumber);
+          if (data.newUser) {
+            // send them to account setup.
+            history.push('/setup');
+          } else {
+            // send them to wallet page.
+            history.push('/wallet');
+          }
+        })
+        .catch((err) => {
+          LoggerService.log(err);
+        });
     }
   };
 
