@@ -13,5 +13,5 @@ export const checkKeysign = (successCallback: () => void, failureCallback: () =>
 export const checkValidSignInPair = (signingKey: string, accountNumber: string): boolean => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return tnb.Account.isValidPair(signingKey, accountNumber);
+  return Account.isValidPair(signingKey, accountNumber);
 };
