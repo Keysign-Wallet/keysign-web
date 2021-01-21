@@ -6,7 +6,7 @@ export const URLS = {
   landing: '/',
   login: '/login',
   privacy: '/privacy',
-  register: '/register',
+  signup: '/signup',
   setup: '/setup',
   tos: '/terms-of-service',
   wallet: '/wallet',

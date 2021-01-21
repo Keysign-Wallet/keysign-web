@@ -12,8 +12,8 @@ import Faq from './pages/Faq/Faq';
 import Landing from './pages/Landing/Landing';
 import Login from './pages/Login';
 import Privacy from './pages/Privacy/Privacy';
-import Register from './pages/Register/Register';
 import Setup from './pages/Setup';
+import Signup from './pages/Signup/Signup';
 import Tos from './pages/Tos/Tos';
 import Wallet from './pages/Wallet/Wallet';
 
@@ -29,8 +29,8 @@ const App: FC = () => {
           <Route exact path={URLS.landing} component={Landing} />
           <Route exact path={URLS.login} component={Login} />
           <Route exact path={URLS.privacy} component={Privacy} />
-          <Route exact path={URLS.register} component={Register} />
           <Route exact path={URLS.setup} component={Setup} />
+          <Route exact path={URLS.signup} component={Signup} />
           <Route exact path={URLS.tos} component={Tos} />
           <Route exact path={URLS.wallet} component={Wallet} />
         </Switch>
