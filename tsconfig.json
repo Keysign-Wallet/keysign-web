@@ -5,8 +5,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -18,5 +22,8 @@
     "target": "es5",
     "noFallthroughCasesInSwitch": true
   },
-  "include": [".eslintrc.js", "src"]
+  "include": [
+    ".eslintrc.js",
+    "src"
+  ]
 }
