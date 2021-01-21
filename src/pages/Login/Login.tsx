@@ -5,7 +5,6 @@ import KsLoginForm from '../../components/KsLoginForm';
 
 import human from '../../assets/images/human-at-door.png';
 import './Login.scss';
-import ExtensionHelperService from '../../services/extensionHelperService';
 import LoggerService from '../../services/loggerService';
 
 const Login: React.FC = () => {

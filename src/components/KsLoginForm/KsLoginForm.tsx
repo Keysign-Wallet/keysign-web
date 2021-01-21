@@ -4,12 +4,16 @@ import { ReactComponent as LoginSvg } from '../../assets/svgs/login.svg';
 
 import './KsLoginForm.scss';
 import ExtensionHelperService from '../../services/extensionHelperService';
-import LoggerService from '../../services/loggerService';
+import BrowserStorageService from '../../services/browserStorageService';
 
 const KsLoginForm: React.FC = () => {
   const [accountNumber, setAccountNumber] = useState('');
   const validateLogin = () => {
-    ExtensionHelperService.validateKSLogin(accountNumber).then((r) => LoggerService.log(r));
+    ExtensionHelperService.validateKSLogin(accountNumber).then((res: any) => {
+      BrowserStorageService.setItem('token', res.data.login.token);
+      BrowserStorageService.setItem('keysign', true);
+      BrowserStorageService.setItem('accountNumber', accountNumber);
+    });
   };
 
   return (

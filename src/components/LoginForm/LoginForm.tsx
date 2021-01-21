@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import './LoginForm.scss';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import { useHistory } from 'react-router-dom';
 import BrowserStorageService from '../../services/browserStorageService';
 import LoggerService from '../../services/loggerService';
+import EncryptionService from '../../services/encryptionService';
 
 const LOGIN_QUERY = gql`
   mutation login($accountNumber: String!, $signingKey: String!) {
@@ -17,25 +19,28 @@ const LOGIN_QUERY = gql`
 
 const LoginForm: React.FC = () => {
   const [login, { data }] = useMutation(LOGIN_QUERY);
+  const history = useHistory();
+
   const [accountNumber, updateAccountNumber] = useState('');
   const [signingKey, updateSigningKey] = useState('');
   const loginHandler = (e: any) => {
     e.preventDefault();
-    // Use the below code to encrypt data
-    // const encryptedPassword = EncryptionService.encryptData(signingKey);
-    // console.log(EncryptionService.decryptData(encryptedPassword));
-    login({ context: { token: 'alpha' }, variables: { accountNumber, signingKey } })
+    login({ variables: { accountNumber, signingKey } })
       .then((res) => {
         LoggerService.log(res);
         LoggerService.log(data);
+
+        const encryptedSigningKey = EncryptionService.encryptData(signingKey);
         BrowserStorageService.setItem('token', data.login.token);
-        BrowserStorageService.setItem('signingKey', signingKey);
+        BrowserStorageService.setItem(signingKey, encryptedSigningKey);
         BrowserStorageService.setItem('keysign', false);
         BrowserStorageService.setItem('accountNumber', accountNumber);
         if (data.newUser) {
           // send them to account setup.
+          history.push('/setup');
         } else {
           // send them to wallet page.
+          history.push('/wallet');
         }
       })
       .catch((err) => {
