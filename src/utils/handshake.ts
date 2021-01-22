@@ -1,3 +1,4 @@
+import * as tnb from '../utils/tnb.min.js';
 import LoggerService from '../services/loggerService';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -11,5 +12,5 @@ export const checkKeysign = (successCallback: () => void, failureCallback: () =>
 };
 
 export const checkValidSignInPair = (signingKey: string, accountNumber: string): boolean => {
-  return Account.isValidPair(signingKey, accountNumber);
+  return tnb.Account.isValidPair(signingKey, accountNumber);
 };
