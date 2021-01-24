@@ -18,6 +18,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  ignorePatterns: ['src/utils/tnb.min.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
