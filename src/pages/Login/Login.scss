@@ -21,6 +21,9 @@
       width: 100%;
       min-height: 100%;
       margin: 0 auto;
+      @media (min-width: 768px) {
+        min-width: 380px;
+      }
     }
     @media (max-width: 769px) {
       display: none;
@@ -29,6 +32,9 @@
   &__right-wrapper {
     flex: 1 1 0px;
     padding: 42px 0;
+    @media (min-width: 768px) {
+      min-width: 350px;
+    }
     & > * {
       margin: 0 auto;
     }
