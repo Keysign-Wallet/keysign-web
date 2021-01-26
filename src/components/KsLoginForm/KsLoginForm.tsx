@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -21,6 +22,7 @@ const LOGIN_QUERY = gql`
 const KsLoginForm: React.FC = () => {
   const [accountNumber, setAccountNumber] = useState('');
   const [login, { data }] = useMutation(LOGIN_QUERY);
+  const history = useHistory();
 
   const validateLogin = () => {
     ExtensionHelperService.validateKSLogin(accountNumber).then(() => {
@@ -29,6 +31,13 @@ const KsLoginForm: React.FC = () => {
         BrowserStorageService.setItem('token', res.data.login.token);
         BrowserStorageService.setItem('keysign', true);
         BrowserStorageService.setItem('accountNumber', accountNumber);
+        if (data && data.newUser) {
+          // send them to account setup.
+          history.push('/setup');
+        } else {
+          // send them to wallet page.
+          history.push('/wallet');
+        }
       });
     });
   };
