@@ -31,7 +31,7 @@ const KsLoginForm: React.FC = () => {
         BrowserStorageService.setItem('token', res.data.login.token);
         BrowserStorageService.setItem('keysign', true);
         BrowserStorageService.setItem('accountNumber', accountNumber);
-        if (data.login.newUser === true) {
+        if (res.data.login.newUser === true) {
           // send them to account setup.
           history.push('/setup');
         } else {
