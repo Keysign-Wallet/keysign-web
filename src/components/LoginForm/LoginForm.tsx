@@ -36,7 +36,7 @@ const LoginForm: React.FC = () => {
           BrowserStorageService.setItem(signingKey, encryptedSigningKey);
           BrowserStorageService.setItem('keysign', false);
           BrowserStorageService.setItem('accountNumber', accountNumber);
-          if (data.login.newUser === true) {
+          if (res.data.login.newUser === true) {
             // send them to account setup.
             history.push('/setup');
           } else {
