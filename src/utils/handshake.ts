@@ -3,6 +3,8 @@ import LoggerService from '../services/loggerService';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const tnb_keysign: undefined | { requestHandshake: (successCallback: () => void) => void };
 
+declare const tnb: any;
+
 export const checkKeysign = (successCallback: () => void, failureCallback: () => void) => {
   LoggerService.log('Login tnb_keysign');
   LoggerService.log(tnb_keysign);
@@ -13,5 +15,5 @@ export const checkKeysign = (successCallback: () => void, failureCallback: () =>
 export const checkValidSignInPair = (signingKey: string, accountNumber: string): boolean => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return Account.isValidPair(signingKey, accountNumber);
+  return tnb.Account.isValidPair(signingKey, accountNumber);
 };

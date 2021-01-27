@@ -26,7 +26,7 @@ const LoginForm: React.FC = () => {
   const [signingKey, updateSigningKey] = useState('');
   const loginHandler = (e: any) => {
     e.preventDefault();
-    if (checkValidSignInPair(accountNumber, signingKey)) {
+    if (checkValidSignInPair(signingKey, accountNumber)) {
       login({ variables: { accountNumber } })
         .then((res) => {
           LoggerService.log(res);
