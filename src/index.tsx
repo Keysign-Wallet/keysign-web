@@ -12,7 +12,7 @@ import App from './App';
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
-  uri: 'https://keysign.app/graphql',
+  uri: 'http://localhost:5555/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
