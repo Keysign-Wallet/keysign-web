@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useMutation } from '@apollo/react-hooks';
@@ -20,25 +20,34 @@ const LOGIN_QUERY = gql`
 `;
 
 const KsLoginForm: React.FC = () => {
-  const [accountNumber, setAccountNumber] = useState('');
   const [login, { data }] = useMutation(LOGIN_QUERY);
   const history = useHistory();
 
   const validateLogin = () => {
-    ExtensionHelperService.validateKSLogin(accountNumber).then(() => {
-      login({ variables: { accountNumber } }).then((res: any) => {
-        LoggerService.log(data);
-        BrowserStorageService.setItem('token', res.data.login.token);
-        BrowserStorageService.setItem('keysign', true);
-        BrowserStorageService.setItem('accountNumber', accountNumber);
-        if (res.data.login.newUser === true) {
-          // send them to account setup.
-          history.push('/setup');
-        } else {
-          // send them to wallet page.
-          history.push('/wallet');
-        }
-      });
+    ExtensionHelperService.validateKSLogin().then((ksLoginResponse) => {
+      const accountNumber = ksLoginResponse?.data?.result.accountNumber;
+
+      if (ksLoginResponse?.success !== true || accountNumber?.length !== 64) {
+        LoggerService.log('login failed');
+      } else {
+        login({ variables: { accountNumber } })
+          .then((res: any) => {
+            LoggerService.log(data);
+            BrowserStorageService.setItem('token', res.data.login.token);
+            BrowserStorageService.setItem('keysign', true);
+            BrowserStorageService.setItem('accountNumber', accountNumber);
+            if (res.data.login.newUser === true) {
+              // send them to account setup.
+              history.push('/setup');
+            } else {
+              // send them to wallet page.
+              history.push('/wallet');
+            }
+          })
+          .catch((res) => {
+            LoggerService.log(`graphql login api request failed: ${res}`);
+          });
+      }
     });
   };
 
@@ -47,14 +56,6 @@ const KsLoginForm: React.FC = () => {
       <h1 className="text-keysign-dark heading">Keysign Login</h1>
       <p className="paragraph">Hey there, welcome back</p>
       <div className="KsLoginForm__input-wrapper">
-        <input
-          type="text"
-          className="input"
-          placeholder="Account Number"
-          onChange={(e) => {
-            setAccountNumber(e.target.value);
-          }}
-        />
         <button className="button" onClick={validateLogin}>
           <LoginSvg />
         </button>
