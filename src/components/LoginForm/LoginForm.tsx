@@ -27,12 +27,10 @@ const LoginForm: React.FC = () => {
   const loginHandler = (e: any) => {
     e.preventDefault();
     if (checkValidSignInPair(signingKey, accountNumber)) {
-      login({ variables: { accountNumber } })
-        .then((res) => {
-          LoggerService.log(res);
+      login({ variables: { accountNumber } }).then((res) => {
           LoggerService.log(data);
           const encryptedSigningKey = EncryptionService.encryptData(signingKey);
-          BrowserStorageService.setItem('token', data.login.token);
+          BrowserStorageService.setItem('token', res.data.login.token);
           BrowserStorageService.setItem('signingKey', encryptedSigningKey);
           BrowserStorageService.setItem('keysign', false);
           BrowserStorageService.setItem('accountNumber', accountNumber);
