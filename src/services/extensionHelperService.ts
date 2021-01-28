@@ -6,7 +6,7 @@ interface KSLoginResult {
     accountNumber: string;
     request_id: number;
     result: {
-      accountNumber: '739d35d4acf47819c2607321d4c65db41359d48387ce8b366e07c20adaacd73d';
+      accountNumber: string;
       verified: true;
     };
     type: string;
