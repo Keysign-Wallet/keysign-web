@@ -31,8 +31,8 @@ const LoginForm: React.FC = () => {
         .then((res) => {
           LoggerService.log(res);
           LoggerService.log(data);
-          BrowserStorageService.setItem('token', data.login.token);
           const encryptedSigningKey = EncryptionService.encryptData(signingKey);
+          BrowserStorageService.setItem('token', data.login.token);
           BrowserStorageService.setItem('signingKey', encryptedSigningKey);
           BrowserStorageService.setItem('keysign', false);
           BrowserStorageService.setItem('accountNumber', accountNumber);
