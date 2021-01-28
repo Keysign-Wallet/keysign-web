@@ -25,7 +25,7 @@ const KsLoginForm: React.FC = () => {
 
   const validateLogin = () => {
     ExtensionHelperService.validateKSLogin().then((ksLoginResponse) => {
-      const accountNumber = ksLoginResponse?.data?.result.accountNumber;
+      const accountNumber = ksLoginResponse?.data?.result?.accountNumber;
 
       if (ksLoginResponse?.success !== true || accountNumber?.length !== 64) {
         LoggerService.log('login failed');
