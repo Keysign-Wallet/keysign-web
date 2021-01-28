@@ -9,9 +9,3 @@ export const checkKeysign = (successCallback: () => void, failureCallback: () =>
   if (tnb_keysign) tnb_keysign.requestHandshake(successCallback);
   else failureCallback();
 };
-
-declare const tnb: any;
-
-export const checkValidSignInPair = (signingKey: string, accountNumber: string): boolean => {
-  return tnb.Account.isValidPair(signingKey, accountNumber);
-};

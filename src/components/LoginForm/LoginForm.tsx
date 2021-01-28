@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import BrowserStorageService from '../../services/browserStorageService';
 import LoggerService from '../../services/loggerService';
 import EncryptionService from '../../services/encryptionService';
-import { checkValidSignInPair } from '../../utils/handshake';
+import { checkValidSignInPair } from '../../utils/tnb';
 
 const LOGIN_QUERY = gql`
   mutation login($accountNumber: String!) {
