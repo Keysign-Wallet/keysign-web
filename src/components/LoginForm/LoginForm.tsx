@@ -33,7 +33,7 @@ const LoginForm: React.FC = () => {
           LoggerService.log(data);
           BrowserStorageService.setItem('token', data.login.token);
           const encryptedSigningKey = EncryptionService.encryptData(signingKey);
-          BrowserStorageService.setItem(signingKey, encryptedSigningKey);
+          BrowserStorageService.setItem('signingKey', encryptedSigningKey);
           BrowserStorageService.setItem('keysign', false);
           BrowserStorageService.setItem('accountNumber', accountNumber);
           if (res.data.login.newUser === true) {
