@@ -24,7 +24,7 @@ const KsLoginForm: React.FC = () => {
   const history = useHistory();
 
   const validateLogin = () => {
-    ExtensionHelperService.validateKSLogin().then((ksLoginResponse) => {
+    ExtensionHelperService.validateKSLogin('').then((ksLoginResponse) => {
       const accountNumber = ksLoginResponse?.data?.result?.accountNumber;
 
       if (ksLoginResponse?.success !== true || accountNumber?.length !== 64) {
