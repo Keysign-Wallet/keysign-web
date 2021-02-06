@@ -17,13 +17,13 @@ const Login: React.FC = () => {
   LoggerService.log(extensionExists);
   return (
     <div className="Login">
-      <div className="border-keysign-ash-i Login__wrapper">
+      <div className="border-keysign-offwhite-i Login__wrapper">
         <div className="Login__illustration">
           <img src={human} alt="human-illustration" />
         </div>
         <div className="Login__right-wrapper">
           <LoginForm />
-          <hr className="border-keysign-ash" />
+          <hr className="border-keysign-offwhite" />
           <KsLoginForm />
         </div>
       </div>
