@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Layout from './containers/Layout/Layout';
+import Layout from './containers/Layout';
 
 import { URLS } from './constants';
 

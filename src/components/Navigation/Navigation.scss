@@ -1,0 +1,48 @@
+@import './variables';
+
+.Navigation {
+  display: flex;
+  align-items: center;
+  height: $nav-height;
+  padding: 0 5vw;
+  max-width: 1366px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  transition: background-color 0.3s;
+  &__Logo__img {
+    height: 29px;
+    width: 24px;
+  }
+  &__items-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    a {
+      color: unset;
+      text-decoration: none;
+    }
+    li {
+      margin: 0 20px;
+    }
+  }
+  @media (max-width: 769px) {
+    & > :not(:nth-child(1)):not(:nth-child(2)) {
+      display: none;
+    }
+  }
+  &__button-link-1 {
+    margin-left: 30px;
+  }
+  &__button-link-2 {
+    margin-left: 30px;
+  }
+  .button {
+    min-width: 100px;
+  }
+}
