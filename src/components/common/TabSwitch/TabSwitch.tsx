@@ -11,9 +11,13 @@ const TabSwitch: React.FC<TabSwitchProps> = ({ tabs }) => {
   return (
     <div className="TabSwitch">
       {tabs.map(({ title }) => (
-        <button onClick={() => setActiveTab(title)} key={title}>
+        <p
+          onClick={() => setActiveTab(title)}
+          key={title}
+          className={`${activeTab === title ? 'active-tab-btn tab-btn' : 'tab-btn'}`}
+        >
           {title}
-        </button>
+        </p>
       ))}
       {tabs.find((tab) => tab.title === activeTab)!.div}
     </div>
