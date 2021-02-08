@@ -11,12 +11,13 @@ code {
 }
 
 $colors: (
-  'primary': #1565d8,
-  'grey': #737b7d,
   'light': #ffffff,
+  'pale-blue': #f3f6fa,
+  'primary': #1565d8,
   'dark': #363a41,
-  'ash': #e0e0e0,
-  'ash-dark': #c3cbcd,
+  'offwhite': #e8e8e8,
+  'dark-grey': #373f41,
+  'grey': #737b7d,
 );
 
 @mixin background-keysign($parent, $color) {
@@ -63,7 +64,7 @@ $colors: (
   font-size: 16px;
   padding: 12px;
   box-sizing: border-box;
-  border-color: map-get($colors, ash);
+  border-color: map-get($colors, offwhite);
   color: map-get($colors, grey);
   border-style: solid;
   border-radius: 4px;
