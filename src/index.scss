@@ -96,3 +96,8 @@ $colors: (
   margin-bottom: 20px;
   font-size: 16px;
 }
+
+.keysign-default-border {
+  border: 1px solid map-get($colors, offwhite);
+  border-radius: 4px;
+}
