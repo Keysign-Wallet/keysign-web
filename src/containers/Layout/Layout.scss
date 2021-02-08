@@ -1,45 +1,6 @@
+@import '../../components/Navigation/variables';
+
 .Layout {
-  $nav-height: 70px;
-  .navBar {
-    display: flex;
-    align-items: center;
-    height: $nav-height;
-    width: 90vw;
-    max-width: 1366px;
-    margin: 0 auto;
-    &__Logo__img {
-      height: 29px;
-      width: 24px;
-    }
-    &__items-list {
-      display: flex;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      margin-left: auto;
-      a {
-        color: unset;
-        text-decoration: none;
-      }
-      li {
-        margin: 0 20px;
-      }
-    }
-    @media (max-width: 769px) {
-      & > :not(:nth-child(1)):not(:nth-child(2)) {
-        display: none;
-      }
-    }
-    &__button-link-1 {
-      margin-left: 30px;
-    }
-    &__button-link-2 {
-      margin-left: 30px;
-    }
-    .button {
-      min-width: 100px;
-    }
-  }
   & > :nth-child(2) {
     height: calc(100vh - #{$nav-height});
     @media (max-width: 769px) {
