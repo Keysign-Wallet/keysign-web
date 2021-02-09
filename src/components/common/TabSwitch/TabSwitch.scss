@@ -1,0 +1,16 @@
+.TabSwitch {
+  &_tabs {
+    padding-bottom: 40px;
+  }
+  &_tab-btn {
+    margin-bottom: 20px;
+    display: inline;
+    padding-right: 10px;
+    border-bottom: solid black 3px;
+    cursor: pointer;
+  }
+
+  &_active-tab-btn {
+    border-bottom: solid blue 3px;
+  }
+}
