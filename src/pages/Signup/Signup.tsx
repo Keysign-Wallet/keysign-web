@@ -1,19 +1,20 @@
 import React from 'react';
 
-import TabSwitch from '../../components/common/TabSwitch';
+import SignupForm from '../../components/SignupForm';
 
 import './Signup.scss';
+
+import left from '../../assets/images/left-frame.png';
+import right from '../../assets/images/right-frame.png';
 
 const Signup: React.FC = () => {
   return (
     <div className="Signup">
-      Signup Component
-      <TabSwitch
-        tabs={[
-          { div: <div className="generate">Generate Wallet Code Here</div>, title: 'Generate Wallet' },
-          { div: <div className="keysign">Keysign Wallet Code Here</div>, title: 'Keysign Wallet' },
-        ]}
-      />
+      <img src={left} alt="left" className="Signup__top-left" />
+      <img src={right} alt="right" className="Signup__bottom-right" />
+      <div className="Signup__wrapper border-keysign-offwhite-i">
+        <SignupForm />
+      </div>
     </div>
   );
 };
