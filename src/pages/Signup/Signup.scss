@@ -3,6 +3,12 @@
   justify-content: center;
   height: fit-content !important;
   position: relative;
+  &_loginprompt {
+    font-weight: 600;
+    &_link {
+      text-decoration: none;
+    }
+  }
   &__wrapper {
     z-index: 1;
     background-color: white;

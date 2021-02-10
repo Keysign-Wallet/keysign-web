@@ -17,8 +17,8 @@ const TabSwitch: React.FC<TabSwitchProps> = ({ tabs }) => {
             key={title}
             className={`${
               activeTab === title
-                ? 'TabSwitch_active-tab-btn TabSwitch_tab-btn heading text-keysign-dark'
-                : 'TabSwitch_tab-btn heading text-keysign-dark'
+                ? 'TabSwitch_active-tab-btn TabSwitch_tab-btn heading text-keysign-dark border-keysign-primary'
+                : 'TabSwitch_tab-btn heading text-keysign-dark border-keysign-offwhite'
             }`}
           >
             {title}
