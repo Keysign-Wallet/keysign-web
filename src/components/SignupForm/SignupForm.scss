@@ -1,6 +1,12 @@
 .SignupForm {
   &_GenerateTab_button {
-    margin: 10px;
-    width: 90%;
+    margin: 30px;
+    width: 80%;
+  }
+  &_loginprompt {
+    font-weight: 600;
+    &_link {
+      text-decoration: none;
+    }
   }
 }

@@ -1,11 +1,8 @@
 .TabSwitch {
-  &_tabs {
-    padding-bottom: 30px;
-  }
   &_tab-btn {
     margin-bottom: 20px;
     display: inline;
-    padding-right: 10px;
+    padding: 0 5px;
     border-bottom-width: 3px;
     border-bottom-style: solid;
     cursor: pointer;

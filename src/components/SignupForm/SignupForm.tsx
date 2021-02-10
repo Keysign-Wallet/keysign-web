@@ -24,9 +24,9 @@ const SignupForm: React.FC = () => {
           { div: KeysignTab, title: 'Keysign Wallet' },
         ]}
       />
-      <p className="paragraph text-keysign-grey">
+      <p className="paragraph text-keysign-grey SignupForm_loginprompt">
         Already a member?{' '}
-        <Link to={URLS.login} className="text-keysign-primary">
+        <Link to={URLS.login} className="text-keysign-primary SignupForm_loginprompt_link">
           Login To Your Wallet
         </Link>
       </p>
