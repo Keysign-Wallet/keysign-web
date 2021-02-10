@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { URLS } from '../../constants';
 
 import TabSwitch from '../common/TabSwitch';
 
@@ -22,6 +24,12 @@ const SignupForm: React.FC = () => {
           { div: KeysignTab, title: 'Keysign Wallet' },
         ]}
       />
+      <p className="paragraph text-keysign-grey">
+        Already a member?{' '}
+        <Link to={URLS.login} className="text-keysign-primary">
+          Login To Your Wallet
+        </Link>
+      </p>
     </div>
   );
 };
