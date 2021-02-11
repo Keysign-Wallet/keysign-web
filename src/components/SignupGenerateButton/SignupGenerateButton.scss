@@ -1,6 +1,6 @@
 .SignupGenerateButton {
   &_button {
-    margin: 30px;
+    margin-bottom: 30px;
     width: 80%;
   }
   &_Expandable {
@@ -11,6 +11,10 @@
     }
     &_DoneButton {
       border: solid 1px;
+    }
+    &_form_input {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 }

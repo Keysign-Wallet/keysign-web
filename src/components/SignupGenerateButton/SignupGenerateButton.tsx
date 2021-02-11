@@ -18,12 +18,12 @@ const SignupGenerateButton = () => {
         <form className="SignupGenerateButton_Expandable_form">
           <input
             type="text"
-            className="input SignupGenerateButton_Expandable_form_AccountNumber"
+            className="input SignupGenerateButton_Expandable_form_input"
             value={account.accountNumberHex}
           />
           <input
             type="text"
-            className="input SignupGenerateButton_Expandable_form_SigningKey"
+            className="input SignupGenerateButton_Expandable_form_input"
             value={account.signingKeyHex}
           />
         </form>
