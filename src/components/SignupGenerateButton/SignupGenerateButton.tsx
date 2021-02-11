@@ -19,15 +19,15 @@ const SignupGenerateButton = () => {
           <input
             type="text"
             className="input SignupGenerateButton_Expandable_form_input"
-            value={account.accountNumberHex}
+            value={account.accountNumberHex.toUpperCase()}
           />
           <input
             type="text"
             className="input SignupGenerateButton_Expandable_form_input"
-            value={account.signingKeyHex}
+            value={account.signingKeyHex.toUpperCase()}
           />
         </form>
-        <p className="paragraph text-keysign-grey">
+        <p className="paragraph text-keysign-grey SignupGenerateButton_Expandable_keyswarning">
           Please copy your keys somewhere safe, if you lose these keys they cannot be recovered.
         </p>
         <button className="button SignupGenerateButton_Expandable_DownloadButton">Download Keys</button>
