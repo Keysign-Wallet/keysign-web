@@ -3,4 +3,11 @@
     margin: 30px;
     width: 80%;
   }
+  &_Expandable {
+    &_DownloadButton,
+    &_DoneButton {
+      margin: 10px 30px;
+      width: 80%;
+    }
+  }
 }
