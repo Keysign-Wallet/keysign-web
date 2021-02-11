@@ -73,4 +73,8 @@
     display: inline-block;
     margin-bottom: 40px;
   }
+
+  & > :not(:last-child) {
+    border-bottom: 1px solid #e8e8e8;
+  }
 }
