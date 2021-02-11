@@ -1,0 +1,16 @@
+.Copy__button {
+  border: none;
+  height: 21px;
+  width: 21px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    height: 9px;
+    width: 9px;
+  }
+}
