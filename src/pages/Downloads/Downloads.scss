@@ -1,2 +1,25 @@
 .Downloads {
+  &__section {
+    min-height: 93vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__mobile {
+    align-items: center;
+
+    & div {
+      flex: 0 1 40%;
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+    }
+  }
+
+  .title {
+    font-size: 60px;
+  }
 }
