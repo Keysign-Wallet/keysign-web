@@ -1,23 +1,24 @@
 .SignupGenerateButton {
   &_button {
-    margin: 30px;
+    margin-bottom: 30px;
     width: 80%;
   }
   &_Expandable {
-    &_DownloadButton {
-      margin: 10px 30px;
-      width: 80%;
-    }
-  }
-  &_Expandable {
+    &_DownloadButton,
     &_DoneButton {
       margin: 10px 30px;
       width: 80%;
-      background-color: white;
-      color: #1565d8;
-      border: 1px solid #E8E8E8;
-      box-sizing: border-box;
-      border-radius: 4px;
+    }
+    &_DoneButton {
+      border: solid 1px;
+    }
+    &_form_input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    &_keyswarning {
+      font-size: small;
+      margin-bottom: 5px;
     }
   }
 }
