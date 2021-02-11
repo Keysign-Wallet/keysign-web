@@ -42,7 +42,7 @@ const Downloads: React.FC = React.memo(() => (
     </section>
 
     <section className="Downloads__section Downloads__desktop">
-      <div className="Downloads__desktop-1">
+      <div className="Downloads__desktop-logos-wrapper">
         <div className="Downloads__desktop-windows">
           <WindowsLogo />
           <div className="Downloads__desktop-text">
