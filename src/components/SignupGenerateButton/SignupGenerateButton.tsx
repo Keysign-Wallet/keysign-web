@@ -15,9 +15,17 @@ const SignupGenerateButton = () => {
         </button>
       )}
       <Expandable open={showGenerate} className="SignupGenerateButton_Expandable">
-        <form className="LoginForm__form">
-          <input type="text" className="input" value={account.accountNumberHex} />
-          <input type="text" className="input" value={account.signingKeyHex} />
+        <form className="SignupGenerateButton_Expandable_form">
+          <input
+            type="text"
+            className="input SignupGenerateButton_Expandable_form_AccountNumber"
+            value={account.accountNumberHex}
+          />
+          <input
+            type="text"
+            className="input SignupGenerateButton_Expandable_form_SigningKey"
+            value={account.signingKeyHex}
+          />
         </form>
         <p className="paragraph text-keysign-grey">
           Please copy your keys somewhere safe, if you lose these keys they cannot be recovered.
@@ -25,7 +33,7 @@ const SignupGenerateButton = () => {
         <button className="button SignupGenerateButton_Expandable_DownloadButton">Download Keys</button>
         <button
           onClick={() => setShowGenerate(!showGenerate)}
-          className="button SignupGenerateButton_Expandable_DoneButton text-keysign-primary background-keysign-light"
+          className="button SignupGenerateButton_Expandable_DoneButton text-keysign-primary-i background-keysign-light-i border-keysign-grey-i"
         >
           Done
         </button>
