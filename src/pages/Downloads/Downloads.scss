@@ -19,7 +19,29 @@
     }
   }
 
+  &__extension {
+    & div {
+      align-self: center;
+      flex: 0 1 50%;
+    }
+
+    & .img {
+      margin-top: 100px;
+      align-self: start;
+    }
+  }
+
+  .button {
+    max-width: 120px;
+  }
+
   .title {
     font-size: 60px;
+  }
+
+  .subtitle {
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: 40px;
   }
 }
