@@ -60,6 +60,20 @@
     }
   }
 
+  &__plugin {
+    justify-content: center;
+
+    & img {
+      align-self: flex-start;
+      margin-top: 80px;
+    }
+
+    & div {
+      flex: 0 1 43%;
+      align-self: center;
+    }
+  }
+
   .button {
     max-width: 120px;
   }
