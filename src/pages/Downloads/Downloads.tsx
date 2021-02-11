@@ -2,6 +2,7 @@ import React from 'react';
 
 import logo from '../../assets/images/logo-LARGE.png';
 import laptop from '../../assets/images/laptop.png';
+import unityUnrealPlugin from '../../assets/images/unity-unreal-plugin.png';
 
 import { ReactComponent as Phone } from '../../assets/svgs/phone1.svg';
 import { ReactComponent as AppStoreBtn } from '../../assets/svgs/app-store.svg';
@@ -59,6 +60,18 @@ const Downloads: React.FC = () => {
           </div>
         </div>
         <img alt="Laptop computer" className="img" src={laptop} />
+      </section>
+
+      <section className="Downloads__section Downloads__plugin">
+        <img alt="Unity Unreal Plugin" className="" src={unityUnrealPlugin} />
+        <div>
+          <h1 className="title text-keysign-dark-grey">Unity / Unreal Plugin</h1>
+          <span className="subtitle text-keysign-grey">
+            Keysign plugin acts as an add-on to the browser and gives the browser additional functionality. Keysign
+            plugins can allow the browser to display additional content it was not originally designed to display.
+          </span>
+          <button className="button">Download</button>
+        </div>
       </section>
     </div>
   );
