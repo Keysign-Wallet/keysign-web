@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
+  margin-top: 40px;
   &__wrapper {
     border: 1px solid;
     border-radius: 4px;
@@ -11,7 +13,8 @@
     @media (max-width: 769px) {
       flex-direction: column;
       padding: 0 20px;
-      width: fit-content;
+      width: 100vw;
+      max-width: 400px;
     }
   }
   &__illustration {

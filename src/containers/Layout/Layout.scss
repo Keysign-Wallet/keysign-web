@@ -1,10 +1,9 @@
 @import '../../components/Navigation/variables';
 
 .Layout {
+  padding-top: $nav-height;
+  box-sizing: border-box;
   & > :nth-child(2) {
-    margin-top: $nav-height;
-    @media (max-width: 769px) {
-      padding: 0 20px;
-    }
+    margin: 0 auto;
   }
 }

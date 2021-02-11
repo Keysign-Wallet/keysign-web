@@ -1,11 +1,7 @@
 @import './variables';
 
 .Navigation {
-  display: flex;
-  align-items: center;
-  height: $nav-height;
-  padding: 0 5vw;
-  margin: 0 auto;
+  padding: 0 20px;
   position: fixed;
   box-sizing: border-box;
   width: 100%;
@@ -14,6 +10,13 @@
   border-bottom: 1px solid;
   border-color: transparent;
   transition: background-color 0.3s;
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: $nav-height;
+    max-width: 1090px;
+    margin: 0 auto;
+  }
   &__Logo__img {
     height: 29px;
     width: 24px;
