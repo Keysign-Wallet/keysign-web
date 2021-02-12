@@ -16,14 +16,20 @@ const SignupGenerateButton = () => {
       )}
       <Expandable open={showGenerate} className="SignupGenerateButton_Expandable">
         <form className="SignupGenerateButton_Expandable_form">
+          <p className="SignupGenerateButton_Expandable_form_label text-keysign-grey">Account Number</p>
           <input
             type="text"
             className="input SignupGenerateButton_Expandable_form_input"
+            name="SignupGenerateButton_Expandable_form_accountNumber"
+            readOnly
             value={account.accountNumberHex.toUpperCase()}
           />
+          <p className="SignupGenerateButton_Expandable_form_label text-keysign-grey">Signing Key</p>
           <input
             type="text"
             className="input SignupGenerateButton_Expandable_form_input"
+            name="SignupGenerateButton_Expandable_form_signingKey"
+            readOnly
             value={account.signingKeyHex.toUpperCase()}
           />
         </form>
