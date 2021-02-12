@@ -2,8 +2,8 @@
 
 .Dashboard {
   max-width: $dashboard-width;
-  margin: 0 auto;
-  padding-top: 40px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
   box-sizing: border-box;
   &__top {
     display: flex;

@@ -7,17 +7,13 @@ const ExpandableContainer: React.FC<{ open?: boolean; className?: string }> = ({
   className = '',
   children,
 }) => {
-  const clientHeight = useRef(0);
-  const [height, setHeight] = useState<number | undefined>(undefined);
+  const [height, setHeight] = useState<number | undefined>(0);
   const expandableRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (expandableRef.current) {
-      if (height === undefined) {
-        clientHeight.current = expandableRef.current.clientHeight;
-        setHeight(0);
-      }
-      if (open && height === 0) {
-        setHeight(clientHeight.current);
+      if (open && (height === 0 || expandableRef.current.clientHeight === 0)) {
+        setHeight(expandableRef.current.scrollHeight);
       }
       if (height && !open && height > 0) {
         setHeight(0);
