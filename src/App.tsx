@@ -6,6 +6,7 @@ import Layout from './containers/Layout';
 import { URLS } from './constants';
 
 import About from './pages/About/About';
+import Documentation from './pages/Documentation/Documentation';
 import Account from './pages/Account/Account';
 import Browser from './pages/Browser/Browser';
 import Client from './pages/Client/Client';
@@ -32,6 +33,7 @@ const App: FC = () => {
       <Layout>
         <Switch>
           <Route exact path={URLS.about} component={About} />
+          <Route exact path={URLS.documentation} component={Documentation} />
           <Route exact path={URLS.account} component={Account} />
           <Route exact path={URLS.browser} component={Browser} />
           <Route exact path={URLS.client} component={Client} />
