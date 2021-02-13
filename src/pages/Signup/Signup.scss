@@ -46,4 +46,22 @@
     top: 45vh;
     right: 0;
   }
+  &_KeysignTab {
+    &_Heading {
+      text-align: left;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    &_Text {
+      text-align: left;
+    }
+    &_List {
+      text-align: left;
+      font-weight: 600;
+      &-item {
+        text-decoration: none;
+        font-size: medium;
+      }
+    }
+  }
 }
