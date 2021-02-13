@@ -18,6 +18,7 @@ $colors: (
   'offwhite': #e8e8e8,
   'dark-grey': #373f41,
   'grey': #737b7d,
+  'navy-blue': #052451,
 );
 
 @mixin background-keysign($parent, $color) {
@@ -97,7 +98,11 @@ $colors: (
   font-size: 16px;
 }
 
-.keysign-default-border {
+@mixin keysign-default-border-styles {
   border: 1px solid map-get($colors, offwhite);
   border-radius: 4px;
+}
+
+.keysign-default-border {
+  @include keysign-default-border-styles;
 }

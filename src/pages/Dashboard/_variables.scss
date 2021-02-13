@@ -1,1 +1,18 @@
+@import '../../index.scss';
+
 $dashboard-width: 1090px;
+$left-col-width: 330px;
+
+.dashboard-col-container {
+  display: flex;
+}
+.dashboard-left-col {
+  max-width: $left-col-width;
+  width: 100%;
+  margin-right: 20px;
+  @include keysign-default-border-styles;
+}
+.dashboard-right-col {
+  width: 100%;
+  @include keysign-default-border-styles;
+}

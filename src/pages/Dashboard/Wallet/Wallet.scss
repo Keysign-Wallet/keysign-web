@@ -1,0 +1,22 @@
+.Wallet {
+  &__right {
+    border: none !important;
+  }
+  &__left {
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  &__small-heading {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  &__large-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  &__right-mid {
+    margin: 16px 0;
+  }
+}

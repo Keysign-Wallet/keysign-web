@@ -1,0 +1,26 @@
+@import '../../../index.scss';
+
+.AddWalletButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &__icon {
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+}

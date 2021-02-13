@@ -2,10 +2,14 @@ import React from 'react';
 import { TableItemType } from './types';
 import './Table.scss';
 
-const Table: React.FC<{ headings: TableItemType[]; rows: TableItemType[][] }> = ({ headings, rows }) => (
+const Table: React.FC<{ headings: TableItemType[]; rows: TableItemType[][]; title: TableItemType }> = ({
+  headings,
+  rows,
+  title,
+}) => (
   <div className="Table keysign-default-border">
     <div className="Table__header">
-      <h2 className="Table__heading text-keysign-primary">Add Wallet</h2>
+      {typeof title === 'function' ? title() : <h2 className="Table__heading text-keysign-primary">{title}</h2>}
     </div>
     <div className="Table__col-headings text-keysign-grey border-keysign-offwhite-i">
       {headings.map((heading) => (typeof heading === 'function' ? heading() : <div>{heading}</div>))}
