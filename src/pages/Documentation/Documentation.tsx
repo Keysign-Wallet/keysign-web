@@ -1,12 +1,10 @@
 import React from 'react';
-import './PrivacyPolicy.scss';
+import './Documentation.scss';
 
-const PrivacyPolicy: React.FC = () => {
+const Documentation: React.FC = () => {
   return (
-    <div className="PrivacyPolicy">
-      <h1 className="page-title">Privacy Policy</h1>
-      <p className="PrivacyPolicy__date paragraph text-keysign-grey">Last updated on January 1st 2021</p>
-      <div className="divider" />
+    <div className="Documentation">
+      <h1 className="page-title">Documentation</h1>
       <p className="paragraph text-keysign-grey">
         Purus adipiscing tristique dis iaculis. Mi egestas posuere sit maecenas bibendum. Nulla a id neque, ullamcorper
         in netus sit. Lorem morbi egestas vel eget viverra in ut. Eleifend gravida eu, cras elementum consectetur
@@ -46,4 +44,4 @@ const PrivacyPolicy: React.FC = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Documentation;
