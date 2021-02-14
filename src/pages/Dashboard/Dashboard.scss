@@ -2,13 +2,32 @@
 
 .Dashboard {
   max-width: $dashboard-width;
-  margin: 0 auto;
-  padding-top: 40px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
   box-sizing: border-box;
+  &__top-left {
+    width: $left-col-width;
+  }
+  &__back-button {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
   &__top {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
   }
   &__total {
     display: flex;

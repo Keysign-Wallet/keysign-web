@@ -8,7 +8,28 @@ import './Signup.scss';
 import left from '../../assets/images/left-frame.png';
 import right from '../../assets/images/right-frame.png';
 
-const KeysignTab = <div className="Form_KeysignTab">Keysign Wallet Code Here</div>;
+const KeysignTab = (
+  <div className="Signup_KeysignTab">
+    <p className="heading text-keysign-dark Signup_KeysignTab_Heading">
+      How to generate a wallet via our other products -
+    </p>
+    <p className="Signup_KeysignTab_Text paragraph text-keysign-grey">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam.
+    </p>
+    <p className="paragraph Signup_KeysignTab_List">
+      {[
+        { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign Extension Guide' },
+        { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign App Guide' },
+        { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign Client Guide' },
+      ].map((item) => (
+        <a href={item.link} className="Signup_KeysignTab_List-item text-keysign-primary">
+          • {item.title} <br />
+        </a>
+      ))}
+    </p>
+  </div>
+);
 
 const Signup: React.FC = () => {
   return (

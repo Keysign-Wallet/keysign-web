@@ -1,2 +1,20 @@
 .PrivacyPolicy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content !important;
+  position: relative;
+  max-width: 1087px;
+  margin: auto;
+  &__date {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .divider {
+    width: 316px;
+    height: 0px;
+    border-bottom: 1px solid #1565D8;
+    align-self: center;
+    margin-bottom: 30px;
+  }
 }

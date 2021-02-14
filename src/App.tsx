@@ -6,11 +6,12 @@ import Layout from './containers/Layout';
 import { URLS } from './constants';
 
 import About from './pages/About/About';
+import Documentation from './pages/Documentation/Documentation';
 import Account from './pages/Account/Account';
 import Browser from './pages/Browser/Browser';
 import Client from './pages/Client/Client';
 import Contact from './pages/Contact/Contact';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/Dashboard';
 import Downloads from './pages/Downloads/Downloads';
 import Faq from './pages/Faq/Faq';
 import History from './pages/History/History';
@@ -32,11 +33,12 @@ const App: FC = () => {
       <Layout>
         <Switch>
           <Route exact path={URLS.about} component={About} />
+          <Route exact path={URLS.documentation} component={Documentation} />
           <Route exact path={URLS.account} component={Account} />
           <Route exact path={URLS.browser} component={Browser} />
           <Route exact path={URLS.client} component={Client} />
           <Route exact path={URLS.contact} component={Contact} />
-          <Route exact path={URLS.dashboard} component={Dashboard} />
+          <Route path={URLS.dashboard} component={Dashboard} />
           <Route exact path={URLS.downloads} component={Downloads} />
           <Route exact path={URLS.faq} component={Faq} />
           <Route exact path={URLS.history} component={History} />

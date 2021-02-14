@@ -9,6 +9,14 @@
       margin: 10px 30px;
       width: 80%;
     }
+    &_DownloadButton {
+      padding-bottom: 4px;
+      &_svg {
+        position: relative;
+        right: 10%;
+        top: 10%;
+      }
+    }
     &_DoneButton {
       border: solid 1px;
     }
@@ -19,6 +27,17 @@
     &_keyswarning {
       font-size: small;
       margin-bottom: 5px;
+      &_svg {
+        position: relative;
+        top: 12px;
+        right: 6px;
+      }
+    }
+    &_form_label {
+      margin: 1px;
+      font-size: 12px;
+      text-align: left;
+      font-weight: 500;
     }
   }
 }
