@@ -1,76 +1,134 @@
 .Downloads {
+  $medium-screen-size: 769px;
+
   &__section {
     min-height: 93vh;
     display: flex;
-    justify-content: space-evenly;
+    margin: 0 18vw;
+
+    @media only screen and (max-width: $medium-screen-size) {
+      margin: 0 25px;
+    }
   }
 
   &__mobile {
     align-items: center;
 
-    & div {
-      flex: 0 1 40%;
-    }
-
     &-icons {
       display: flex;
-      justify-content: space-between;
-      width: 70%;
+
+      & a:last-child {
+        margin-left: 20px;
+      }
+    }
+
+    @media only screen and (max-width: $medium-screen-size) {
+      justify-content: center;
+      flex-direction: column;
+      align-items: normal;
+
+      &-icons {
+        flex-wrap: wrap;
+
+        & a {
+          margin: 10px;
+        }
+
+        & a,
+        a:last-child {
+          margin-left: 0;
+        }
+      }
+
+      & .img-phone {
+        display: none;
+      }
     }
   }
 
   &__extension {
     & div {
       align-self: center;
-      flex: 0 1 50%;
     }
 
     & .img {
       margin-top: 100px;
       align-self: start;
     }
+
+    @media only screen and (max-width: $medium-screen-size) {
+      & .img {
+        display: none;
+      }
+    }
   }
 
   &__desktop {
-    justify-content: center;
+    @media only screen and (max-width: $medium-screen-size) {
+      flex-direction: column;
+    }
 
     &-logos-wrapper {
-      flex: 0 1 35%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+
+      @media only screen and (max-width: $medium-screen-size) {
+        margin-top: 50px;
+      }
     }
 
     &-windows,
     &-apple {
       display: flex;
-      justify-content: space-between;
+
+      @media only screen and (max-width: $medium-screen-size) {
+        margin-right: 20px;
+      }
     }
 
     & .img {
       align-self: center;
+
+      @media only screen and (max-width: $medium-screen-size) {
+        margin-top: 25px;
+        order: -1;
+        width: 100%;
+      }
     }
 
     &-text {
       border: 1px solid #e5e5e5;
       border-radius: 5px;
       padding: 10px;
-      flex: 0 1 70%;
+      width: 320px;
       height: 140px;
+      margin-left: 20px;
+
+      @media only screen and (max-width: $medium-screen-size) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__plugin {
-    justify-content: center;
-
     & img {
       align-self: flex-start;
       margin-top: 80px;
     }
 
     & div {
-      flex: 0 1 43%;
       align-self: center;
+    }
+
+    @media only screen and (max-width: $medium-screen-size) {
+      flex-direction: column;
+
+      & img {
+        align-self: center;
+        width: 100%;
+      }
     }
   }
 
@@ -80,15 +138,19 @@
 
   .title {
     font-size: 60px;
+
+    @media only screen and (max-width: $medium-screen-size) {
+      font-size: 40px;
+    }
   }
 
   .subtitle {
     font-size: 25px;
     display: inline-block;
     margin-bottom: 40px;
-  }
 
-  & > :not(:last-child) {
-    border-bottom: 1px solid #e8e8e8;
+    @media only screen and (max-width: $medium-screen-size) {
+      font-size: 20px;
+    }
   }
 }

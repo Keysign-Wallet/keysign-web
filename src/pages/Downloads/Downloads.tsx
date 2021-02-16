@@ -26,7 +26,9 @@ const Downloads: React.FC = React.memo(() => (
           </a>
         </div>
       </div>
-      <Phone />
+      <div className="img-phone">
+        <Phone />
+      </div>
     </section>
 
     <section className="Downloads__section Downloads__extension">
