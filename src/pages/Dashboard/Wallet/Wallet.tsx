@@ -1,4 +1,6 @@
 import React from 'react';
+import eyeIcon from '../../../assets/images/eyeIcon.png';
+import CopyButton from '../../../components/common/CopyButton';
 import TransactionsTable from '../TransactionsTable';
 import './Wallet.scss';
 
@@ -12,9 +14,17 @@ const Wallet: React.FC = () => (
         <div className="Wallet__large-text">ku3edj58dej459sobhwe</div>
       </div>
       {/* Break this bit into its own component. So when view/hide is toggled, it only re-renders this bit */}
-      <div>
+      <div className="Wallet__heading-actions-row">
         <div className="Wallet__small-heading">MY SIGNUP KEY</div>
-        {/* <div></div> */}
+        <div className="Wallet__actions">
+          <CopyButton text="" />
+          <button className="small-action-button Wallet__toggle-key">
+            <img src={eyeIcon} alt="eyeIcon" />
+          </button>
+        </div>
+      </div>
+      <div className="Wallet__large-text">
+        <b>*****************</b>
       </div>
     </div>
     <div className="dashboard-right-col Wallet__right">

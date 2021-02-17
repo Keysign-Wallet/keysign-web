@@ -5,43 +5,4 @@
   margin: 40px auto 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  &__top-left {
-    width: $left-col-width;
-  }
-  &__back-button {
-    background-color: transparent;
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px;
-    align-items: center;
-  }
-  &__total {
-    display: flex;
-    flex-direction: column;
-    height: 66px;
-    font-weight: bold;
-    justify-content: center;
-    padding: 0 20px;
-    .total-caption {
-      font-size: 10px;
-      margin-bottom: 5px;
-    }
-    .total-value {
-      font-size: 20px;
-    }
-  }
 }

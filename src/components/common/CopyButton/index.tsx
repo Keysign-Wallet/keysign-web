@@ -3,7 +3,7 @@ import CopyButton from './CopyButton';
 
 const CopyButtonContainer: React.FC<{ text: string }> = () => {
   const copyToClipboard = () => {
-    // add copy text
+    // add copy logic
   };
   return <CopyButton onClick={copyToClipboard} />;
 };

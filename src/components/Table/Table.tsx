@@ -35,9 +35,10 @@ const Table: React.FC<{ headings: TableItemType[]; rows: TableItemType[][]; titl
       <div>15,799</div>
       <div>$234,878</div>
     </div> */}
-    {rows.map((row) => (
-      <div className="Table__row border-keysign-offwhite-i text-keysign-dark-i">
-        {row.map((rowData) => (typeof rowData === 'function' ? rowData() : <div>{rowData}</div>))}
+    {/* Remember to Use a unique key instead of index */}
+    {rows.map((row, i) => (
+      <div className="Table__row border-keysign-offwhite-i text-keysign-dark-i" key={i}>
+        {row.map((rowData, index) => (typeof rowData === 'function' ? rowData() : <div key={index}>{rowData}</div>))}
       </div>
     ))}
   </div>

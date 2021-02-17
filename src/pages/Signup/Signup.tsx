@@ -22,8 +22,8 @@ const KeysignTab = (
         { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign Extension Guide' },
         { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign App Guide' },
         { link: 'https://github.com/Keysign-Wallet/keysign', title: 'Keysign Client Guide' },
-      ].map((item) => (
-        <a href={item.link} className="Signup_KeysignTab_List-item text-keysign-primary">
+      ].map((item, index) => (
+        <a href={item.link} key={index} className="Signup_KeysignTab_List-item text-keysign-primary">
           • {item.title} <br />
         </a>
       ))}

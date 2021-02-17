@@ -101,6 +101,20 @@ $colors: (
   font-size: 20px;
 }
 
+.small-action-button {
+  border: none;
+  height: 21px;
+  width: 21px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map-get($colors, pale-blue);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .paragraph {
   font-weight: normal;
   margin-top: 0;
