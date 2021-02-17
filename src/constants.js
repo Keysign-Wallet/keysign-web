@@ -1,6 +1,7 @@
 export const URLS = {
   about: '/about',
   account: '/account',
+  authcheck: '/2fa',
   browser: '/browser',
   client: '/client',
   contact: '/contact',
