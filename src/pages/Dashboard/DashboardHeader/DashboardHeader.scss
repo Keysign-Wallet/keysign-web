@@ -1,0 +1,50 @@
+@import '../variables';
+
+.DashboardHeader {
+  &__top-left {
+    width: $left-col-width;
+    display: flex;
+    & > :nth-child(2) {
+      margin-left: auto;
+    }
+  }
+  &__back-button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 40px;
+    padding: 0 10px;
+    & > :nth-child(2) {
+      margin-left: 10px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  &__total {
+    display: flex;
+    flex-direction: column;
+    height: 66px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 20px;
+    .total-caption {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+    .total-value {
+      font-size: 20px;
+    }
+  }
+}

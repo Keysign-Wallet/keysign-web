@@ -7,10 +7,12 @@ import { URLS } from './constants';
 
 import About from './pages/About/About';
 import Account from './pages/Account/Account';
+import AuthCheck from './pages/AuthCheck/AuthCheck';
 import Browser from './pages/Browser/Browser';
 import Client from './pages/Client/Client';
 import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard';
+import Documentation from './pages/Documentation/Documentation';
 import Downloads from './pages/Downloads/Downloads';
 import Faq from './pages/Faq/Faq';
 import History from './pages/History/History';
@@ -33,10 +35,12 @@ const App: FC = () => {
         <Switch>
           <Route exact path={URLS.about} component={About} />
           <Route exact path={URLS.account} component={Account} />
+          <Route exact path={URLS.authcheck} component={AuthCheck} />
           <Route exact path={URLS.browser} component={Browser} />
           <Route exact path={URLS.client} component={Client} />
           <Route exact path={URLS.contact} component={Contact} />
           <Route path={URLS.dashboard} component={Dashboard} />
+          <Route exact path={URLS.documentation} component={Documentation} />
           <Route exact path={URLS.downloads} component={Downloads} />
           <Route exact path={URLS.faq} component={Faq} />
           <Route exact path={URLS.history} component={History} />

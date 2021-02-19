@@ -84,11 +84,35 @@ $colors: (
   }
 }
 
+.page-title {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 52px;
+  line-height: 62px;
+  letter-spacing: 0.2px;
+  margin-bottom: 15px;
+}
+
 .heading {
   font-weight: 500;
   margin-bottom: 5px;
   margin-top: 0;
   font-size: 20px;
+}
+
+.small-action-button {
+  border: none;
+  height: 21px;
+  width: 21px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map-get($colors, pale-blue);
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .paragraph {

@@ -3,7 +3,7 @@
     border: none !important;
   }
   &__left {
-    padding: 25px;
+    padding: 25px 40px;
     box-sizing: border-box;
   }
   &__small-heading {
@@ -18,5 +18,31 @@
   }
   &__right-mid {
     margin: 16px 0;
+  }
+  &__toggle-key {
+    img {
+      height: 8px;
+      width: 13px;
+    }
+  }
+  &__actions {
+    display: flex;
+    & > :nth-child(even) {
+      margin-left: 10px;
+    }
+  }
+  &__heading-actions-row {
+    display: flex;
+    align-items: center;
+    & > :nth-child(1) {
+      margin-right: auto;
+    }
+  }
+}
+
+.TransferButton {
+  max-width: 167px;
+  svg {
+    margin-right: 10px;
   }
 }
