@@ -52,4 +52,14 @@
       border-bottom: 0;
     }
   }
+  &__signup {
+    &-prompt {
+      text-align: center;
+      position: relative;
+      top: 20px;
+    }
+    &-link {
+      text-decoration: none;
+    }
+  }
 }

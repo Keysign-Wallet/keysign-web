@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { URLS } from '../../constants';
 
 import LoginForm from '../../components/LoginForm';
 import KsLoginForm from '../../components/KsLoginForm';
@@ -25,6 +27,12 @@ const Login: React.FC = () => {
           <LoginForm />
           <hr className="border-keysign-offwhite" />
           <KsLoginForm />
+          <p className="paragraph text-keysign-grey Login__signup-prompt">
+            Don't have a wallet?{' '}
+            <Link to={URLS.signup} className="text-keysign-primary Login__signup-link">
+              Signup
+            </Link>
+          </p>
         </div>
       </div>
     </div>
