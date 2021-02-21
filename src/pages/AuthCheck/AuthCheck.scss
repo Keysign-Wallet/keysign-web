@@ -1,2 +1,57 @@
 .AuthCheck {
+  display: flex;
+  justify-content: center;
+  height: fit-content !important;
+  position: relative;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: white;
+    text-align: center;
+    max-width: 455px;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 4px;
+    width: 100%;
+    height: fit-content;
+    margin-top: 15vh;
+    margin-bottom: 15vh !important;
+    & > * {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+  &__lock {
+    margin-bottom: 1em;
+  }
+  &__input {
+    width: 300px;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  &__button {
+    font-weight: bold;
+    margin-bottom: 2em;
+  }
+  &__top-left,
+  &__bottom-right {
+    top: 45vh;
+    right: 0;
+    position: absolute;
+    height: 450px;
+    width: 350px;
+    @media (max-width: 800px) {
+      height: 300px;
+      width: 200px;
+    }
+  }
+  &__top-left {
+    top: 0;
+    left: 0;
+  }
+  &__bottom-right {
+    position: absolute;
+  }
 }
