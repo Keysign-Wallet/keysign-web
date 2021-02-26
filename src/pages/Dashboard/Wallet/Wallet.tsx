@@ -1,7 +1,7 @@
 import React from 'react';
 import eyeIcon from '../../../assets/images/eyeIcon.png';
 import CopyButton from '../../../components/common/CopyButton';
-import TransactionsTable from '../TransactionsTable';
+import TransactionsTable from '../../../components/TransactionsTable';
 import './Wallet.scss';
 
 const Wallet: React.FC = () => (

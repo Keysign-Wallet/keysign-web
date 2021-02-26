@@ -2,7 +2,7 @@ import React from 'react';
 import Table from '../../../components/Table';
 import AddressDisplay from '../../../components/AddressDisplay';
 import AddWalletButton from '../AddWalletButton';
-import TransactionsTable from '../TransactionsTable';
+import TransactionsTable from '../../../components/TransactionsTable';
 import './DashboardRoot.scss';
 
 const title = () => <AddWalletButton />;
