@@ -4,6 +4,7 @@ import { URLS } from '../../constants';
 import DashboardHeader from './DashboardHeader';
 import DashboardRoot from './DashboardRoot';
 import Wallet from './Wallet';
+import Transfer from './Transfer';
 import './Dashboard.scss';
 
 const Dashboard: React.FC = () => (
@@ -13,6 +14,7 @@ const Dashboard: React.FC = () => (
       <Router>
         <Switch>
           <Route exact path={`${URLS.dashboard}/wallet`} component={Wallet} />
+          <Route exact path={`${URLS.dashboard}/transfer`} component={Transfer} />
           <Route exact path={`${URLS.dashboard}/`} component={DashboardRoot} />
         </Switch>
       </Router>

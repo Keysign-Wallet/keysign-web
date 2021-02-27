@@ -1,0 +1,14 @@
+.Transfer {
+  text-align: center;
+  &__right {
+    border: none !important;
+  }
+  &__left {
+    padding: 25px 20px;
+    box-sizing: border-box;
+  }
+  &__input {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
