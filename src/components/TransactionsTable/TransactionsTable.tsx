@@ -7,7 +7,7 @@ type TransactionsTableProps = {
   transactions: {
     sender: string;
     recipient: string;
-    amount: number;
+    amount: string;
     balance_key: string;
     signature: string;
     date_created: string;
@@ -17,18 +17,14 @@ type TransactionsTableProps = {
 const TransactionsTable: FC<TransactionsTableProps> = ({ transactions }: TransactionsTableProps) => {
   const title = 'Transactions';
   const headings = ['Sender', 'Recipient', 'Amount', 'Balance Key', 'Signature', 'Date Created'];
-  const rows = [
-    [
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      '26,000',
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      'Jun 12, 2020',
-    ],
-  ];
-  // eslint-disable-next-line no-console
-  console.log(transactions);
+  const rows = transactions.map((transaction) => [
+    shortenString(4, 3, transaction.sender),
+    shortenString(4, 3, transaction.recipient),
+    transaction.amount,
+    shortenString(4, 3, transaction.balance_key),
+    shortenString(4, 3, transaction.signature),
+    transaction.date_created,
+  ]);
   return (
     <div className="TransactionsTable">
       <Table title={title} headings={headings} rows={rows} />

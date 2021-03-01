@@ -12,7 +12,7 @@ const TransactionsTableContainer: React.FC = () => {
   // Use passed in accountNumber to get all transactions and pass in to TransactionsTable
   const transactions = [
     {
-      amount: 21000,
+      amount: '21000',
       balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
       date_created: 'Jun 12, 2020',
       recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
@@ -20,7 +20,7 @@ const TransactionsTableContainer: React.FC = () => {
       signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
     },
     {
-      amount: 21000,
+      amount: '21000',
       balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
       date_created: 'Jun 12, 2020',
       recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
