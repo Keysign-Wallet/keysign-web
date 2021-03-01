@@ -1,5 +1,8 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
+
+import { createStore } from 'redux';
 
 import './index.scss';
 import { HttpLink } from 'apollo-link-http';
@@ -8,7 +11,10 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 import * as serviceWorker from './serviceWorker';
+import rootReducer from './redux';
 import App from './App';
+
+const store = createStore(rootReducer);
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
@@ -34,7 +40,9 @@ const client: any = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </ApolloProvider>,
   document.getElementById('root')
 );
