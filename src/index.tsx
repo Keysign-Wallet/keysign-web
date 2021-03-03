@@ -1,8 +1,9 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger'
 
 import './index.scss';
 import { HttpLink } from 'apollo-link-http';
@@ -14,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './redux';
 import App from './App';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
