@@ -1,19 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { ReactComponent as Transfer } from '../../../assets/svgs/transfer.svg';
-import DashboardContext from '../DashboardContext';
+import { setHeaderElement } from '../../../redux/Dashboard/actionCreators';
 import Wallet from './Wallet';
 
 const WalletContainer: React.FC = () => {
-  const { setHeaderEl } = useContext(DashboardContext);
+  const dispatch = useDispatch();
   useEffect(() => {
-    setHeaderEl(
-      <button className="TransferButton button">
-        <Transfer />
-        Transfer
-      </button>
+    dispatch(
+      setHeaderElement(
+        <button className="TransferButton button">
+          <Transfer />
+          Transfer
+        </button>
+      )
     );
-    return () => setHeaderEl(null);
-  }, [setHeaderEl]);
+    return () => {
+      dispatch(setHeaderElement(null));
+    };
+  }, [dispatch]);
   return <Wallet />;
 };
 

@@ -18,7 +18,7 @@ const RootContainer: React.FC = () => {
   }, [dispatch]);
 
   const showMoreHandler = () => {
-    push('/Dashboard/wallet');
+    push('/dashboard/wallet');
   };
 
   const rows: RowType[] = [
