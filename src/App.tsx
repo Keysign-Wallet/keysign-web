@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Route, Redirect, Switch, RouteProps } from 'react-router-dom';
 
 import Layout from './containers/Layout';
 
 import { URLS } from './constants';
+import { ApplicationStore } from './redux/types';
 
 import About from './pages/About/About';
 import Account from './pages/Account/Account';
@@ -28,7 +30,17 @@ import Tos from './pages/Tos/Tos';
 import Transactions from './pages/Transactions/Transactions';
 import Wallet from './pages/Wallet/Wallet';
 
+interface ProtectedRouteProps extends RouteProps {
+  authenticated: boolean;
+  to?: string;
+}
+
+const ProtectedRoute: FC<ProtectedRouteProps> = ({ authenticated, to, ...rest }) =>
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  authenticated ? <Route {...rest} /> : <Redirect to={to || URLS.login} />;
+
 const App: FC = () => {
+  const { isLoggedIn } = useSelector((state: ApplicationStore) => state.app);
   return (
     <Router>
       <Layout>
@@ -39,7 +51,7 @@ const App: FC = () => {
           <Route exact path={URLS.browser} component={Browser} />
           <Route exact path={URLS.client} component={Client} />
           <Route exact path={URLS.contact} component={Contact} />
-          <Route path={URLS.dashboard} component={Dashboard} />
+          <ProtectedRoute path={URLS.dashboard} component={Dashboard} authenticated={isLoggedIn} />
           <Route exact path={URLS.documentation} component={Documentation} />
           <Route exact path={URLS.downloads} component={Downloads} />
           <Route exact path={URLS.faq} component={Faq} />

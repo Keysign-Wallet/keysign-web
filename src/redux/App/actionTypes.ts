@@ -1,0 +1,1 @@
+export const APP_SET_LOGGED_IN = 'APP_SET_LOGGED_IN';

@@ -1,7 +1,31 @@
 @import '../variables';
+@import '../../../index.scss';
 
 .DashboardRoot {
+  padding-bottom: 50px;
+  &__row {
+    cursor: pointer;
+    &:hover {
+      background-color: map-get($colors, pale-blue);
+    }
+  }
   &__Transactions-table {
     margin-top: 30px;
+    .Table {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  &__table-bottom {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-top: none !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    button {
+      width: 172px;
+    }
   }
 }

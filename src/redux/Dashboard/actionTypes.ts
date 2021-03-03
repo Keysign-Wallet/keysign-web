@@ -1,0 +1,1 @@
+export const SET_HEADER_ELEMENT = 'SET_HEADER_ELEMENT';
