@@ -26,7 +26,7 @@ const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit 
       shortenString(4, 3, transaction.balance_key),
       shortenString(4, 3, transaction.signature),
       transaction.date_created,
-    ]
+    ],
   }));
   return (
     <div className="TransactionsTable">

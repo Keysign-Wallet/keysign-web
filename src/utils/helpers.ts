@@ -9,17 +9,6 @@ export const shortenString = (startLen: number, endLen: number, fullString: stri
  * @param  {Array.<String | [Boolean, ...String]>} args
  */
 export const mergeClasses = (...args: any) => {
-  console.log(
-    args.reduce((accumulator: any, currentValue: any) => {
-      if (Array.isArray(currentValue)) {
-        const bool = currentValue.shift();
-        if (bool) return `${accumulator} ${mergeClasses(...currentValue)}`;
-        return accumulator;
-      }
-      if (!currentValue) return accumulator;
-      return `${accumulator ? `${accumulator} ` : ''}${currentValue}`;
-    }, '')
-  );
   return args.reduce((accumulator: any, currentValue: any) => {
     if (Array.isArray(currentValue)) {
       const bool = currentValue.shift();

@@ -6,7 +6,7 @@ import { ApplicationStore } from '../../../redux/types';
 import DashboardHeader from './DashboardHeader';
 
 const DashboardHeaderContainer: React.FC = () => {
-  const { headerElement } = useSelector((state: ApplicationStore) => state.dashboard)
+  const { headerElement } = useSelector((state: ApplicationStore) => state.dashboard);
   const {
     location: { pathname },
     goBack,

@@ -8,14 +8,19 @@ import './DashboardRoot.scss';
 const title = () => <AddWalletButton />;
 const headings = ['name', 'address', 'tnbc', 'locked', 'usd equivalent'];
 
-const DashboardRoot: React.FC<{ showMoreHandler: () => void, walletsRow: RowType[] }> = ({ showMoreHandler, walletsRow }) => (
+const DashboardRoot: React.FC<{ showMoreHandler: () => void; walletsRow: RowType[] }> = ({
+  showMoreHandler,
+  walletsRow,
+}) => (
   <div className="DashboardRoot">
     <Table headings={headings} rows={walletsRow} title={title} />
     <div className="DashboardRoot__Transactions-table">
       <TransactionsTable rowLimit={1} />
     </div>
     <div className="DashboardRoot__table-bottom keysign-default-border">
-      <button className="button" onClick={showMoreHandler}>Show More</button>
+      <button className="button" onClick={showMoreHandler}>
+        Show More
+      </button>
     </div>
   </div>
 );

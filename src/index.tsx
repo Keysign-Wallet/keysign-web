@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger'
+import logger from 'redux-logger';
 
 import './index.scss';
 import { HttpLink } from 'apollo-link-http';

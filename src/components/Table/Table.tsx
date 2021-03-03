@@ -39,8 +39,8 @@ const Table: React.FC<{ headings: TableItemType[]; rows: RowType[]; title: Table
     {/* Remember to Use a unique key instead of index */}
     {rows.map(({ rowProps = {}, row }, i) => (
       <div
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...rowProps}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rowProps}
         className={mergeClasses('Table__row border-keysign-offwhite-i text-keysign-dark-i', rowProps.className)}
         key={rowProps.key || i}
       >
