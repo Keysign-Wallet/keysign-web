@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../index.scss';
 
 .Navigation {
   position: fixed;
@@ -27,13 +28,50 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: auto;
+    margin-right: auto;
+    margin-left: 30px;
     a {
       color: unset;
       text-decoration: none;
     }
     li {
       margin: 0 20px;
+    }
+  }
+  &__right {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    &_menu {
+      display: flex;
+      align-items: center;
+      &_user {
+        font-weight: bold;
+      }
+      &_line {
+        margin: auto 10px;
+        height: 50px;
+        width: 1.5px;
+      }
+      &_logout {
+        border: none;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        margin-left: 3px;
+        cursor: pointer;
+      }
+      &_arrow {
+        height: 30px;
+        width: 34px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+      }
     }
   }
   @media (max-width: 769px) {
@@ -43,11 +81,18 @@
   }
   &__button-link-1 {
     margin-left: 30px;
+    .button {
+      background-color: transparent;
+      color: map-get($colors, primary);
+      border: 2px solid map-get($colors, primary);
+    }
   }
   &__button-link-2 {
     margin-left: 30px;
   }
   .button {
+    width: 100vw;
+    max-width: 139px;
     min-width: 100px;
   }
 }
