@@ -11,7 +11,7 @@ const RootContainer: React.FC = () => {
   const { push } = useHistory();
 
   useEffect(() => {
-    dispatch(setHeaderElement(<h1 className="text-keysign-dark">Dashboard</h1>));
+    dispatch(setHeaderElement(<h1 className="text-keysign-dark DashboardRoot__heading">Dashboard</h1>));
     return () => {
       dispatch(setHeaderElement(null));
     };

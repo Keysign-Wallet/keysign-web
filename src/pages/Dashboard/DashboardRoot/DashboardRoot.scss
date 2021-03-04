@@ -3,6 +3,9 @@
 
 .DashboardRoot {
   padding-bottom: 50px;
+  &__heading {
+    margin: 0;
+  }
   &__row {
     cursor: pointer;
     &:hover {
@@ -18,7 +21,7 @@
   }
   &__table-bottom {
     display: flex;
-    height: 100px;
+    height: 80px;
     justify-content: center;
     align-items: center;
     border-top: none !important;
