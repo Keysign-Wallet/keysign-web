@@ -7,6 +7,9 @@
   &__left {
     padding: 25px 20px;
     box-sizing: border-box;
+    & > hr {
+      border-top: 0;
+    }
   }
   &__button {
     margin: 40px 0 0 0;

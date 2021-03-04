@@ -12,7 +12,7 @@ const Transfer: React.FC = () => (
         <input className="input Transfer__account-input" placeholder="Wallet Address" type="text" />
         <button className="button Transfer__button">Send Via Keysign</button>
       </div>
-      <hr />
+      <hr className="border-keysign-offwhite" />
       <div className="Transfer__normal">
         <input className="input Transfer__amount-input" placeholder="0" type="number" />
         <input className="input Transfer__account-input" placeholder="Wallet Address" type="text" />
