@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AdornedInput from '../../../components/common/AdornedInput/AdornedInput';
 import './Settings.scss';
 
 const Settings: React.FC = () => {
@@ -7,27 +8,25 @@ const Settings: React.FC = () => {
 
   return (
     <div className="Settings">
-      <p className="paragraph text-keysign-grey">Email Change</p>
-      <input
-        type="text"
-        className="input"
-        placeholder="Email Address"
+      <h2 className="heading">Email Change</h2>
+      <AdornedInput
+        text="Email Address"
         value={email}
-        onChange={(e) => {
+        callback={(e) => {
           e.preventDefault();
           setEmail(e.target.value);
         }}
       />
-      <input
+      <AdornedInput
+        text="Password"
         type="password"
-        className="input"
-        placeholder="Password"
         value={password}
-        onChange={(e) => {
+        callback={(e) => {
           e.preventDefault();
           setPassword(e.target.value);
         }}
       />
+      <button className="button">Save</button>
     </div>
   );
 };

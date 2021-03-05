@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import Settings from './Settings/Settings';
+import Security from './Security/Security';
+import DeleteAccount from './DeleteAccount/DeleteAccount';
+
 import './Account.scss';
-import Settings from './subpages/Settings';
 
 enum Page {
   SETTINGS,
@@ -13,9 +16,9 @@ const renderSelectedPage = (page: Page) => {
     case Page.SETTINGS:
       return <Settings />
     case Page.SECURITY:
-      return <p>security</p>;
+      return <Security />
     case Page.DELETE_ACCOUNT:
-      return <p>delete account</p>;
+      return <DeleteAccount />
     default:
       return <p>invalid page selected</p>;
   }
