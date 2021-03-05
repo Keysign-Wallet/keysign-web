@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Account.scss';
+import Settings from './subpages/Settings';
 
 enum Page {
   SETTINGS,
@@ -10,7 +11,7 @@ enum Page {
 const renderSelectedPage = (page: Page) => {
   switch (page) {
     case Page.SETTINGS:
-      return <p>settings</p>;
+      return <Settings />
     case Page.SECURITY:
       return <p>security</p>;
     case Page.DELETE_ACCOUNT:
