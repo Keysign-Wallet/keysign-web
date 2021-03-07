@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import './SignupGenerateButton.scss';
-import { createAccount } from '../../utils/tnb';
+import { Account } from 'thenewboston';
 import Expandable from '../common/Expandable';
 
 const SignupGenerateButton = () => {
   const [showGenerate, setShowGenerate] = useState(false);
-  const account = createAccount();
+  const account = new Account();
   return (
     <div className="SignupGenerateButton">
       {!showGenerate && (

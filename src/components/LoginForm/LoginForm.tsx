@@ -4,10 +4,10 @@ import './LoginForm.scss';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { useHistory } from 'react-router-dom';
+import { Account } from 'thenewboston';
 import BrowserStorageService from '../../services/browserStorageService';
 import LoggerService from '../../services/loggerService';
 import EncryptionService from '../../services/encryptionService';
-import { checkValidSignInPair } from '../../utils/tnb';
 
 const LOGIN_QUERY = gql`
   mutation login($accountNumber: String!) {
@@ -26,7 +26,7 @@ const LoginForm: React.FC = () => {
   const [signingKey, updateSigningKey] = useState('');
   const loginHandler = (e: any) => {
     e.preventDefault();
-    if (checkValidSignInPair(signingKey, accountNumber)) {
+    if (Account.isValidPair(signingKey, accountNumber)) {
       login({ variables: { accountNumber } })
         .then((res) => {
           LoggerService.log(data);
