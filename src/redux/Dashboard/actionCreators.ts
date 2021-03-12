@@ -1,5 +1,6 @@
 import { ActionCreator } from 'redux';
-import { SetHeaderElement } from './types';
+import { SetHeaderElement, AddNotification, NotificationTypes } from './types';
+import { makeid } from '../../utils/helpers';
 import * as actionTypes from './actionTypes';
 
 export const setHeaderElement: ActionCreator<SetHeaderElement> = (headerElement: JSX.Element | null) => ({
@@ -7,4 +8,18 @@ export const setHeaderElement: ActionCreator<SetHeaderElement> = (headerElement:
     headerElement,
   },
   type: actionTypes.SET_HEADER_ELEMENT,
+});
+
+export const addNotification: ActionCreator<AddNotification> = (
+  content: JSX.Element | string,
+  type?: NotificationTypes
+) => ({
+  payload: {
+    notification: {
+      content,
+      id: makeid(10),
+      type: type || NotificationTypes.SUCCESS,
+    },
+  },
+  type: actionTypes.ADD_NOTIFICATION,
 });
