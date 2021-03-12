@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
-import DashboardContext from './DashboardContext';
+import React from 'react';
 import Dashboard from './Dashboard';
 
 const DashboardContainer: React.FC = () => {
-  const [headerEl, setHeaderEl] = useState<JSX.Element | null>(null);
-  return (
-    <DashboardContext.Provider value={{ headerEl, setHeaderEl }}>
-      <Dashboard />
-    </DashboardContext.Provider>
-  );
+  return <Dashboard />;
 };
 
 export default DashboardContainer;
