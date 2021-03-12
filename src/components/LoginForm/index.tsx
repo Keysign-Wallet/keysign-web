@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
+import { Account } from 'thenewboston';
 import LoggerService from '../../services/loggerService';
 import useLogin from '../../hooks/login';
-import { checkValidSignInPair } from '../../utils/tnb';
 
 import LoginForm from './LoginForm';
 import { InputsType } from './types';
@@ -32,7 +32,7 @@ const LoginFormContainer: React.FC = () => {
   const loginHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const { accountNumber, signingKey } = fieldValues;
     e.preventDefault();
-    if (checkValidSignInPair(signingKey, accountNumber)) {
+    if (Account.isValidPair(signingKey, accountNumber)) {
       login({ variables: { accountNumber } })
         .then((res) => {
           loginSuccess(res, accountNumber, signingKey);

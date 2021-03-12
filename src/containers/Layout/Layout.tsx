@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
 
 import './Layout.scss';
 
@@ -8,6 +9,7 @@ const Layout: React.FC = ({ children }) => {
     <div className="Layout">
       <Navigation />
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };

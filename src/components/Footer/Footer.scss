@@ -1,0 +1,32 @@
+.Footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 360px;
+  margin-top: 100vh;
+  padding: 80px 200px;
+  box-sizing: border-box;
+  color: white;
+  &__heading {
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+    left: 10px;
+  }
+  &__copyright {
+    margin-top: 30px;
+    font-weight: 200;
+  }
+  &__icons {
+    margin-top: 30px;
+    &-icon {
+      width: 32px;
+      height: 32px;
+      box-sizing: border-box;
+      margin-right: 20px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+  }
+}
