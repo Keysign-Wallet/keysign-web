@@ -3,8 +3,8 @@ import AdornedInput from '../../../components/common/AdornedInput/AdornedInput';
 import './Settings.scss';
 
 const Settings: React.FC = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <div className="Settings">

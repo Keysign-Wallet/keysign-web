@@ -3,8 +3,8 @@ import AdornedInput from '../../../components/common/AdornedInput/AdornedInput';
 import './DeleteAccount.scss';
 
 const DeleteAccount: React.FC = () => {
-  const [email, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [email, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     <div className="Settings">
