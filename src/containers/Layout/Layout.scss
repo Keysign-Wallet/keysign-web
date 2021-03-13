@@ -6,4 +6,7 @@
   & > :nth-child(2) {
     margin: 0 auto;
   }
+  &__content {
+    min-height: 100vh;
+  }
 }
