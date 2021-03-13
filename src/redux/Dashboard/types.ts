@@ -29,3 +29,9 @@ export interface AddNotification extends Action {
     notification: NotificationType;
   };
 }
+
+export interface RemoveNotification extends Action {
+  payload: {
+    id: string;
+  };
+}

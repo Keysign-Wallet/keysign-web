@@ -13,6 +13,8 @@ const DashboardReducer: Reducer<DashboardInterface> = (state = initalState, acti
       return { ...state, headerElement: action.payload.headerElement };
     case actionTypes.ADD_NOTIFICATION:
       return { ...state, notifications: [...state!.notifications, action.payload.notification] };
+    case actionTypes.REMOVE_NOTIFICATION:
+      return { ...state, notifications: state.notifications.filter(({ id }) => action.payload.id !== id) };
     default:
       return initalState;
   }

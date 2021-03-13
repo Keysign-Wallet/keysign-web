@@ -1,14 +1,36 @@
 @import '../../../../index.scss';
 
+@keyframes NotificationAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes NotificationDisappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .Notification {
   display: flex;
   align-items: center;
-  border: 1px solid rgb(126, 189, 126);
-  background-image: linear-gradient(rgb(231, 245, 231), rgb(226, 236, 226), rgb(231, 245, 231));
+  border: 1px solid;
+  border-color: rgb(126, 189, 126);
   padding: 5px;
   border-radius: 10px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 16px -7px rgb(64, 187, 64);
+  animation: NotificationAppear 0.3s forwards;
+  opacity: 0;
+  &__disappear {
+    animation: NotificationDisappear 0.3s forwards;
+  }
   &__content {
     margin-left: 20px;
     max-width: 250px;
@@ -17,7 +39,6 @@
     height: 40px;
     width: 40px;
     align-self: flex-start;
-    background-color: rgb(64, 187, 64);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,9 +54,6 @@
       & > svg {
         height: 40%;
         width: 40%;
-        path {
-          fill: rgb(64, 187, 64);
-        }
       }
     }
   }

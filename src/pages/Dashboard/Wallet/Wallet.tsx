@@ -15,9 +15,9 @@ const Wallet: React.FC = () => (
       </div>
       {/* Break this bit into its own component. So when view/hide is toggled, it only re-renders this bit */}
       <div className="Wallet__heading-actions-row">
-        <div className="Wallet__small-heading">MY SIGNUP KEY</div>
+        <div className="Wallet__small-heading">MY SIGNING KEY</div>
         <div className="Wallet__actions">
-          <CopyButton text="" />
+          <CopyButton text="giunugfsgfi" name="Signing key" />
           <button className="small-action-button Wallet__toggle-key">
             <img src={eyeIcon} alt="eyeIcon" />
           </button>

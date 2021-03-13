@@ -7,7 +7,7 @@ const AddressDisplay: React.FC<{ address: string }> = ({ address }) => (
   <div className="AddressDisplay">
     <div>{shortenString(4, 6, address)}</div>
     <div className="AddressDisplay__buttons">
-      <CopyButton text={address} />
+      <CopyButton text={address} name="Address" />
     </div>
   </div>
 );
