@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import AddressDisplay from './AddressDisplay';
 
 const AddressDisplayContainer: React.FC<{ address: string }> = ({ address }) => {
-  return <AddressDisplay address={address} />;
+  const inputRef = useRef<HTMLInputElement>(null);
+  return <AddressDisplay address={address} inputRef={inputRef} />;
 };
 
 export default AddressDisplayContainer;

@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ReactComponent as Transfer } from '../../../assets/svgs/transfer.svg';
@@ -8,6 +8,7 @@ import Wallet from './Wallet';
 const WalletContainer: React.FC = () => {
   const dispatch = useDispatch();
   const { push } = useHistory();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = useCallback(() => {
     push('/dashboard/transfer');
@@ -26,7 +27,7 @@ const WalletContainer: React.FC = () => {
       dispatch(setHeaderElement(null));
     };
   }, [dispatch, handleClick]);
-  return <Wallet />;
+  return <Wallet inputRef={inputRef} />;
 };
 
 export default WalletContainer;
