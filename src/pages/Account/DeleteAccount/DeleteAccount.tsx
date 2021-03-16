@@ -18,7 +18,7 @@ const DeleteAccount: React.FC = () => {
         }}
       />
       <AdornedInput
-        text="Password"
+        text="Confirm Password"
         type="password"
         value={confirmPassword}
         callback={(e) => {

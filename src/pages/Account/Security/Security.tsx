@@ -9,7 +9,15 @@ const Security: React.FC = () => {
     <div className="Security">
       <h2 className="heading">Update Two-Factor Authentication</h2>
       <AdornedInput
-        text="2FA Code" // TODO: should this field be 'phone number'?
+        text="New Phone Number"
+        value={code}
+        callback={(e) => {
+          e.preventDefault();
+          setCode(e.target.value);
+        }}
+      />
+      <AdornedInput
+        text="Confirm New Phone Number"
         value={code}
         callback={(e) => {
           e.preventDefault();

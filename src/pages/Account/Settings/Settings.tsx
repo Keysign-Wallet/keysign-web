@@ -4,6 +4,7 @@ import './Settings.scss';
 
 const Settings: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
@@ -15,6 +16,14 @@ const Settings: React.FC = () => {
         callback={(e) => {
           e.preventDefault();
           setEmail(e.target.value);
+        }}
+      />
+      <AdornedInput
+        text="Confirm Email Address"
+        value={confirmEmail}
+        callback={(e) => {
+          e.preventDefault();
+          setConfirmEmail(e.target.value);
         }}
       />
       <AdornedInput
