@@ -1,11 +1,16 @@
 .Footer {
   width: 100%;
-  height: 360px;
+  height: fit-content;
+  min-height: 360px;
   padding: 8vh 12vw;
   box-sizing: border-box;
   color: white;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   &__info {
     margin-right: 18vw;
   }
@@ -33,6 +38,7 @@
   }
   &__icons {
     margin-top: 30px;
+    margin-bottom: 20px;
     &-icon {
       width: 32px;
       height: 32px;
