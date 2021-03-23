@@ -5,8 +5,7 @@ export interface InputsType {
 }
 
 export type LoginFormType = {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  values: InputsType;
-  loginHandler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  loginHandler: (values: InputsType) => void;
   loading: boolean;
+  initialValues: InputsType;
 };

@@ -10,6 +10,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+$fonts: (
+  'small': 13px,
+);
+
+@keyframes inputErrorReveal {
+  100% {
+    height: map-get($fonts, small) + 6px;
+  }
+}
+
 $colors: (
   'light': #ffffff,
   'pale-blue': #f3f6fa,
@@ -69,6 +79,17 @@ $colors: (
   color: map-get($colors, grey);
   border-style: solid;
   border-radius: 4px;
+}
+
+.formInputError {
+  font-size: map-get($fonts, small);
+  color: red;
+  text-align: left;
+  display: block;
+  margin-bottom: 8px;
+  height: 0px;
+  overflow: hidden;
+  animation: inputErrorReveal 0.3s forwards;
 }
 
 .button {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -19,19 +19,14 @@ const LOGIN_QUERY = gql`
   }
 `;
 
+const initialValues = { accountNumber: '', signingKey: '' };
+
 const LoginFormContainer: React.FC = () => {
   const [login, { loading }] = useMutation(LOGIN_QUERY);
   const { loginSuccess } = useLogin();
 
-  const [fieldValues, setFieldValues] = useState<InputsType>({ accountNumber: '', signingKey: '' });
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFieldValues({ ...fieldValues, [e.target.name]: e.target.value });
-  };
-
-  const loginHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const loginHandler = (fieldValues: InputsType) => {
     const { accountNumber, signingKey } = fieldValues;
-    e.preventDefault();
     if (Account.isValidPair(signingKey, accountNumber)) {
       login({ variables: { accountNumber } })
         .then((res) => {
@@ -43,7 +38,7 @@ const LoginFormContainer: React.FC = () => {
     }
   };
 
-  return <LoginForm onChange={onChange} values={fieldValues} loginHandler={loginHandler} loading={loading} />;
+  return <LoginForm loginHandler={loginHandler} loading={loading} initialValues={initialValues} />;
 };
 
 export default LoginFormContainer;
