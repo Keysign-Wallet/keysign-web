@@ -79,8 +79,14 @@ $colors: (
   border: none;
   font-size: 17px;
   color: map-get($colors, light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     cursor: pointer;
+  }
+  & > svg {
+    height: 30px;
   }
 }
 

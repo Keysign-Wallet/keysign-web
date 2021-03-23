@@ -20,7 +20,7 @@ const LOGIN_QUERY = gql`
 `;
 
 const LoginFormContainer: React.FC = () => {
-  const [login] = useMutation(LOGIN_QUERY);
+  const [login, { loading }] = useMutation(LOGIN_QUERY);
   const { loginSuccess } = useLogin();
 
   const [fieldValues, setFieldValues] = useState<InputsType>({ accountNumber: '', signingKey: '' });
@@ -43,7 +43,7 @@ const LoginFormContainer: React.FC = () => {
     }
   };
 
-  return <LoginForm onChange={onChange} values={fieldValues} loginHandler={loginHandler} />;
+  return <LoginForm onChange={onChange} values={fieldValues} loginHandler={loginHandler} loading={loading} />;
 };
 
 export default LoginFormContainer;

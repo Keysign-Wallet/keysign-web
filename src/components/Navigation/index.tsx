@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ApplicationStore } from '../../redux/types';
-import { setIsLoggedIn } from '../../redux/App/actionCreators';
+import { logUserOut } from '../../redux/App/actionCreators';
 import Navigation from './Navigation';
 
 const NavigationContainer: React.FC = () => {
@@ -16,7 +16,7 @@ const NavigationContainer: React.FC = () => {
     }
   });
   const logout = () => {
-    dispatch(setIsLoggedIn(false));
+    dispatch(logUserOut());
   };
   const className = `Navigation${isScrolled ? ' border-keysign-offwhite-i background-keysign-pale-blue' : ''}`;
   return <Navigation className={className} isLoggedIn={isLoggedIn} logout={logout} />;

@@ -19,7 +19,7 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
-  uri: 'http://localhost:5555/graphql',
+  uri: 'https://keysign.app/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {

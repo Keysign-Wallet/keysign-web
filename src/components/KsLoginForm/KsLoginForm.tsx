@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as LoginSvg } from '../../assets/svgs/login.svg';
+import Button from '../common/Button';
 
 const KsLoginForm: React.FC<{ validateLogin: () => void }> = ({ validateLogin }) => {
   return (
@@ -7,9 +8,9 @@ const KsLoginForm: React.FC<{ validateLogin: () => void }> = ({ validateLogin })
       <h1 className="text-keysign-dark heading">Keysign Login</h1>
       <p className="paragraph">Hey there, welcome back</p>
       <div className="KsLoginForm__input-wrapper">
-        <button className="button" onClick={validateLogin}>
-          <LoginSvg />
-        </button>
+        <Button onClick={validateLogin} className="KsLoginForm__button">
+          Extension login <LoginSvg />
+        </Button>
       </div>
     </div>
   );

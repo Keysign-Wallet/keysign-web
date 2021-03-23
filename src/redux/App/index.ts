@@ -8,11 +8,12 @@ const initalState: AppInterface = {
 
 const AppReducer: Reducer<AppInterface> = (state = initalState, action) => {
   switch (action.type) {
-    case actionTypes.APP_SET_LOGGED_IN:
-      if (action.payload.isLoggedIn) return { ...state, isLoggedIn: true };
+    case actionTypes.APP_LOG_USER_IN:
+      return { ...state, isLoggedIn: true };
+    case actionTypes.APP_LOG_USER_OUT:
       return { ...state, isLoggedIn: false };
     default:
-      return initalState;
+      return state;
   }
 };
 

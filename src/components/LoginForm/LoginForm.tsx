@@ -1,7 +1,8 @@
 import React from 'react';
+import Button from '../common/Button';
 import { LoginFormType } from './types';
 
-const LoginForm: React.FC<LoginFormType> = ({ onChange, values, loginHandler }) => {
+const LoginForm: React.FC<LoginFormType> = ({ onChange, values, loginHandler, loading }) => {
   return (
     <div className="LoginForm">
       <h1 className="text-keysign-dark heading">Login</h1>
@@ -14,6 +15,7 @@ const LoginForm: React.FC<LoginFormType> = ({ onChange, values, loginHandler }) 
             placeholder="Account Number"
             value={values.accountNumber}
             onChange={onChange}
+            name="accountNumber"
           />
           <input
             type="text"
@@ -21,11 +23,12 @@ const LoginForm: React.FC<LoginFormType> = ({ onChange, values, loginHandler }) 
             placeholder="Signing Key"
             value={values.signingKey}
             onChange={onChange}
+            name="signingKey"
           />
         </div>
-        <button className="button" onClick={loginHandler}>
+        <Button onClick={loginHandler} loading={loading}>
           Login
-        </button>
+        </Button>
       </form>
     </div>
   );
