@@ -7,6 +7,11 @@
     margin: 0 auto;
   }
   &__content {
-    min-height: 100vh;
+    $min-height: calc(100vh - #{$nav-height});
+    min-height: $min-height;
+    & > * {
+      height: fit-content;
+      min-height: $min-height;
+    }
   }
 }
