@@ -29,3 +29,8 @@ export const makeid = (length: number) => {
   }
   return result;
 };
+
+export const toHexString = (array: Uint8Array) => {
+  // buffer is an ArrayBuffer
+  return Array.prototype.map.call(new Uint8Array(array.buffer), (x) => `00${x.toString(16)}`.slice(-2)).join('');
+};

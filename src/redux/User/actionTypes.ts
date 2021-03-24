@@ -1,0 +1,2 @@
+export const USER_SET_ACCOUNT = 'USER_SET_ACCOUNT';
+export const USER_CLEAR_STORE = 'USER_CLEAR_STORE';

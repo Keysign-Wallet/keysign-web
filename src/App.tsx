@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect, Switch, RouteProps } from 'react-router-dom';
 
 import Layout from './containers/Layout';
 
+import useApp from './hooks/app';
 import { URLS } from './constants';
 import { ApplicationStore } from './redux/types';
 
@@ -41,7 +42,15 @@ const ProtectedRoute: FC<ProtectedRouteProps> = ({ authenticated, to, ...rest })
 
 const App: FC = () => {
   const { isLoggedIn } = useSelector((state: ApplicationStore) => state.app);
-  return (
+  const { validating, validateUser } = useApp();
+
+  useEffect(() => {
+    validateUser();
+  }, [validateUser]);
+
+  return validating ? (
+    <div>LOADING</div>
+  ) : (
     <Router>
       <Layout>
         <Switch>
