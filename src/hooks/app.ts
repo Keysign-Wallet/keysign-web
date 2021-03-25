@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { logUserIn, logUserOut } from '../redux/App/actionCreators';
+import { setAccount } from '../redux/User/actionCreators';
 import BrowserStorageService from '../services/browserStorageService';
 
 const useApp = () => {
@@ -18,6 +19,7 @@ const useApp = () => {
       logUserOut();
     } else {
       dispatch(logUserIn());
+      dispatch(setAccount(accountNumber));
       setValidating(false);
     }
   }, [dispatch]);
