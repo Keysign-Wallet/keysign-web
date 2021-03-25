@@ -1,19 +1,33 @@
 import { Action } from 'redux';
+import { PrimaryValidator, Bank } from 'thenewboston';
+// import { ThunkAction } from 'redux-thunk';
 
 export interface BankInterface {
+  bank: Bank;
   name: string;
-  url: string;
+  primaryValidator: null | PrimaryValidator;
 }
 
 export interface UserInterface {
   balance: number;
-  banks: BankInterface[];
-  activeBank: BankInterface;
+  bank: BankInterface;
   accountNumber: string;
+  transactions: [];
+  requestStates: {
+    balance: RequestStates;
+    primaryValidator: RequestStates;
+    transactions: RequestStates;
+  };
 }
 
 export interface SetAccount extends Action {
   payload: {
     accountNumber: string;
   };
+}
+
+export interface RequestStates {
+  requesting: boolean;
+  failed: any;
+  success: boolean;
 }

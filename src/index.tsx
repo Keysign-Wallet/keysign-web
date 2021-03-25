@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
@@ -15,7 +16,7 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './redux';
 import App from './App';
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
