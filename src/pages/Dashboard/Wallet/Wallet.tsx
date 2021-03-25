@@ -1,12 +1,15 @@
 import React from 'react';
-import eyeIcon from '../../../assets/images/eyeIcon.png';
 import CopyButton from '../../../components/common/CopyButton';
 import TransactionsTable from '../../../components/TransactionsTable';
 import { shortenString } from '../../../utils/helpers';
 import { WalletViewProps } from './types';
 import './Wallet.scss';
 
-const Wallet: React.FC<WalletViewProps> = ({ addressRef, signingKeyRef, address }) => (
+const Wallet: React.FC<WalletViewProps> = ({
+  addressRef,
+  // signingKeyRef,
+  address,
+}) => (
   <div className="Wallet dashboard-col-container">
     <div className="dashboard-left-col text-keysign-navy-blue-i Wallet__left">
       <div className="Wallet__small-heading">My Wallet Balance</div>
