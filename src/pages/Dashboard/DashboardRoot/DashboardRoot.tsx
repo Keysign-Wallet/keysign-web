@@ -6,7 +6,7 @@ import TransactionsTable from '../../../components/TransactionsTable';
 import './DashboardRoot.scss';
 
 const title = () => <AddWalletButton />;
-const headings = ['name', 'address', 'tnbc', 'locked', 'usd equivalent'];
+const headings = ['address', 'tnbc', 'locked', 'usd equivalent'];
 
 const DashboardRoot: React.FC<{ showMoreHandler: () => void; walletsRow: RowType[] }> = ({
   showMoreHandler,

@@ -47,7 +47,7 @@ const Navigation: React.FC<{ className: string; isLoggedIn: boolean; logout: () 
         <>
           <ul className="Navigation__items-list text-keysign-grey">
             <li>
-              <NavLink to="/dashboard/wallet" activeClassName="selected">
+              <NavLink to="/dashboard" activeClassName="selected">
                 Dashboard
               </NavLink>
             </li>

@@ -22,7 +22,7 @@ const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit 
     row: [
       shortenString(4, 3, transaction.sender),
       shortenString(4, 3, transaction.recipient),
-      transaction.amount,
+      Number(transaction.amount).toLocaleString(),
       shortenString(4, 3, transaction.balance_key),
       shortenString(4, 3, transaction.signature),
       transaction.date_created,
