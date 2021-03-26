@@ -59,7 +59,7 @@ const Navigation: React.FC<{ className: string; isLoggedIn: boolean; logout: () 
           </ul>
           <div className="Navigation__right">
             <div className="Navigation__right_menu">
-              <div className="Navigation__right_menu_user text-keysign-dark">Welcome, Mr Sky</div>
+              <div className="Navigation__right_menu_user text-keysign-dark">Welcome</div>
               <NavDropDown />
               <div className="Navigation__right_menu_line background-keysign-offwhite" />
               <button className="Navigation__right_menu_logout" onClick={logout}>

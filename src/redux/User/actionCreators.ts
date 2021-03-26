@@ -1,8 +1,10 @@
 import { ActionCreator, Action, AnyAction } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { PrimaryValidator } from 'thenewboston';
+import { PrimaryValidator, AccountPaymentHandler, Account } from 'thenewboston';
 import axios from 'axios';
 import { ApplicationStore } from '../types';
+import BrowserStorageService from '../../services/browserStorageService';
+import EncryptionService from '../../services/encryptionService';
 import * as actionTypes from './actionTypes';
 import { SetAccount } from './types';
 
@@ -76,7 +78,7 @@ export const getTransactions = (): ThunkAction<any, ApplicationStore, void, AnyA
       },
     } = getState();
 
-    axios
+    await axios
       .get(`${bank.url}/bank_transactions`, {
         params: { account_number: accountNumber },
       })
@@ -86,5 +88,45 @@ export const getTransactions = (): ThunkAction<any, ApplicationStore, void, AnyA
       .catch((error) => {
         return dispatch({ payload: { error }, type: actionTypes.USER_GET_TRANSACTIONS_FAILED });
       });
+  };
+};
+
+export const transfer = (
+  recipient: string,
+  amount: number,
+  keysign = false
+): ThunkAction<any, ApplicationStore, void, AnyAction> => {
+  return async (dispatch, getState) => {
+    dispatch({ type: actionTypes.USER_TRANSFER_REQUESTED });
+
+    const {
+      user: {
+        bank: { bank },
+      },
+    } = getState();
+
+    if (!keysign) {
+      const encryptedSigningKey = BrowserStorageService.getItem('signingKey');
+
+      if (!encryptedSigningKey) {
+        return dispatch({ payload: { error: 'Signing Key not found' }, type: actionTypes.USER_TRANSFER_FAILED });
+      }
+
+      const paymentHandler = new AccountPaymentHandler({
+        account: new Account(EncryptionService.decryptData(encryptedSigningKey)),
+        bankUrl: bank.url,
+      });
+
+      await paymentHandler.init();
+      await paymentHandler
+        .sendCoins(recipient, Number(amount))
+        .then((data) => {
+          console.log(data);
+          return dispatch({ payload: data, type: actionTypes.USER_TRANSFER_SUCCESSFUL });
+        })
+        .catch((error) => {
+          return dispatch({ payload: { error }, type: actionTypes.USER_TRANSFER_FAILED });
+        });
+    }
   };
 };
