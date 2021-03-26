@@ -30,7 +30,9 @@ const WalletContainer: React.FC = () => {
       dispatch(setHeaderElement(null));
     };
   }, [dispatch, handleClick]);
-  return <Wallet addressRef={addressRef} signingKeyRef={signingKeyRef} address={user.accountNumber} />;
+  return (
+    <Wallet balance={user.balance} addressRef={addressRef} signingKeyRef={signingKeyRef} address={user.accountNumber} />
+  );
 };
 
 export default WalletContainer;

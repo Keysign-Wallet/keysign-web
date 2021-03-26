@@ -6,7 +6,10 @@ import { ApplicationStore } from '../../../redux/types';
 import DashboardHeader from './DashboardHeader';
 
 const DashboardHeaderContainer: React.FC = () => {
-  const { headerElement } = useSelector((state: ApplicationStore) => state.dashboard);
+  const {
+    dashboard: { headerElement },
+    user: { balance, usdRate },
+  } = useSelector((state: ApplicationStore) => state);
   const {
     location: { pathname },
     goBack,
@@ -15,7 +18,14 @@ const DashboardHeaderContainer: React.FC = () => {
   if (path[path.length - 1] === '/') path = path.slice(0, -1);
   const showBackButton = path !== `${URLS.dashboard}`;
 
-  return <DashboardHeader showBackButton={showBackButton} goBack={goBack} headerElement={headerElement} />;
+  return (
+    <DashboardHeader
+      showBackButton={showBackButton}
+      goBack={goBack}
+      headerElement={headerElement}
+      fiatEq={balance * usdRate}
+    />
+  );
 };
 
 export default DashboardHeaderContainer;

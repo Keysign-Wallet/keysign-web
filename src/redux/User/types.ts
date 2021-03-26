@@ -13,6 +13,7 @@ export interface UserInterface {
   bank: BankInterface;
   accountNumber: string;
   transactions: [];
+  usdRate: number;
   requestStates: {
     balance: RequestStates;
     primaryValidator: RequestStates;

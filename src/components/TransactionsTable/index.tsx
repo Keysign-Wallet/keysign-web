@@ -1,66 +1,27 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { ApplicationStore } from '../../redux/types';
+import { toReadableDate } from '../../utils/helpers';
 
 import TransactionsTable from './TransactionsTable';
 
 const TransactionsTableContainer: React.FC<{ rowLimit?: number }> = ({ rowLimit }) => {
-  // TODO:
-  // const bank = await this.getBank();
-  // const transactions = await axios.get(bank.url + '/bank_transactions', {
-  //   params: { account_number: accountNumber },
-  // });
-  // const transactions = transactions.data.results;
-  // Use passed in accountNumber to get all transactions and pass in to TransactionsTable
-  const transactions = [
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-    {
-      amount: '21000',
-      balance_key: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      date_created: 'Jun 12, 2020',
-      recipient: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      sender: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-      signature: 'KU3efgfgdfgdfgttrtrqrges0bhwe',
-    },
-  ];
-  return <TransactionsTable transactions={transactions} rowLimit={rowLimit} />;
+  const {
+    user: { transactions },
+  } = useSelector((state: ApplicationStore) => state);
+
+  const preparedTransactions = () => {
+    return transactions.map(({ amount, recipient, block: { balance_key, created_date, sender, signature } }) => ({
+      amount,
+      balance_key,
+      date_created: toReadableDate(created_date),
+      recipient,
+      sender,
+      signature,
+    }));
+  };
+
+  return <TransactionsTable transactions={preparedTransactions()} rowLimit={rowLimit} />;
 };
 
 export default TransactionsTableContainer;

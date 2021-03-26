@@ -34,3 +34,9 @@ export const toHexString = (array: Uint8Array) => {
   // buffer is an ArrayBuffer
   return Array.prototype.map.call(new Uint8Array(array.buffer), (x) => `00${x.toString(16)}`.slice(-2)).join('');
 };
+
+export const toReadableDate = (date: string) => {
+  const shortMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  const dateObj = new Date(date);
+  return `${shortMonthNames[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
+};

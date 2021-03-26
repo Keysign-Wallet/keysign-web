@@ -22,6 +22,7 @@ const initalState: UserInterface = {
     transactions: { ...defaultRequestState },
   },
   transactions: [],
+  usdRate: 0.03,
 };
 
 const userReducer: Reducer<UserInterface> = (state = initalState, action) => {

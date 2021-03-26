@@ -2,11 +2,12 @@ import React from 'react';
 import { ReactComponent as Arrow } from '../../../assets/svgs/arrow.svg';
 import './DashboardHeader.scss';
 
-const DashboardHeader: React.FC<{ showBackButton: boolean; goBack: () => void; headerElement: JSX.Element | null }> = ({
-  showBackButton,
-  goBack,
-  headerElement,
-}) => (
+const DashboardHeader: React.FC<{
+  showBackButton: boolean;
+  goBack: () => void;
+  headerElement: JSX.Element | null;
+  fiatEq: number;
+}> = ({ showBackButton, goBack, headerElement, fiatEq }) => (
   <div className="DashboardHeader__top">
     <div className="DashboardHeader__top-left">
       {showBackButton && (
@@ -21,7 +22,7 @@ const DashboardHeader: React.FC<{ showBackButton: boolean; goBack: () => void; h
     </div>
     <div className="keysign-default-border background-keysign-light DashboardHeader__total text-keysign-dark">
       <div className="total-caption">fiat equivalent</div>
-      <div className="total-value">$345,876.908</div>
+      <div className="total-value">{`$${fiatEq.toLocaleString()}`}</div>
     </div>
   </div>
 );

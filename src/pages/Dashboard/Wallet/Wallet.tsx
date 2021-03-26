@@ -7,13 +7,14 @@ import './Wallet.scss';
 
 const Wallet: React.FC<WalletViewProps> = ({
   addressRef,
+  balance,
   // signingKeyRef,
   address,
 }) => (
   <div className="Wallet dashboard-col-container">
     <div className="dashboard-left-col text-keysign-navy-blue-i Wallet__left">
       <div className="Wallet__small-heading">My Wallet Balance</div>
-      <div className="Wallet__large-text">14,500</div>
+      <div className="Wallet__large-text">{balance.toLocaleString()}</div>
       <div className="Wallet__right-mid">
         <div className="Wallet__heading-actions-row">
           <div className="Wallet__small-heading">Wallet Address</div>
