@@ -1,5 +1,9 @@
 .AddressDisplay {
   display: flex;
+  &__address {
+    display: flex;
+    align-items: center;
+  }
   &__buttons {
     margin-left: 5px;
   }

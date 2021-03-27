@@ -1,17 +1,20 @@
 import React from 'react';
 import BrowserStorageService from '../../../services/browserStorageService';
+import useTransfer from './hooks/useTransfer';
 import Transfer from './Transfer';
+import { TranseferData } from './types';
 
 const TransferContainer: React.FC = () => {
-  const transfer = (r: any) => {
-    console.log(r);
-  };
   let buttonText = 'Send';
   const keysign = BrowserStorageService.getItem('keysign');
-  if (keysign && Boolean(keysign)) {
+  if (keysign && keysign === 'true') {
     buttonText = 'Send Via Keysign';
   }
-  return <Transfer onClick={transfer} buttonText={buttonText} />;
+  const { transferCoins, requesting } = useTransfer();
+  const transfer = (data: TranseferData) => {
+    transferCoins(data.accountNumber, data.amount, keysign && keysign === 'true');
+  };
+  return <Transfer loading={requesting} onClick={transfer} buttonText={buttonText} />;
 };
 
 export default TransferContainer;

@@ -18,6 +18,7 @@ export interface UserInterface {
     balance: RequestStates;
     primaryValidator: RequestStates;
     transactions: RequestStates;
+    transfer: RequestStates;
   };
 }
 

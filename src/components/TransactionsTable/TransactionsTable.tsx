@@ -2,17 +2,11 @@ import React, { FC } from 'react';
 
 import Table from '../Table';
 import { shortenString } from '../../utils/helpers';
+import { TransactionType } from './types';
 
 type TransactionsTableProps = {
   rowLimit?: number;
-  transactions: {
-    sender: string;
-    recipient: string;
-    amount: string;
-    balance_key: string;
-    signature: string;
-    date_created: string;
-  }[];
+  transactions: TransactionType[];
 };
 
 const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit }: TransactionsTableProps) => {

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TransactionsTable from '../../../components/TransactionsTable';
+import Button from '../../../components/common/Button';
 import { transferSchema, initialValues } from './constants';
+import { TranseferData } from './types';
 import './Transfer.scss';
 
 const Transfer: React.FC<{
-  onClick: (data: { accountNumber: string; amount: number }) => void;
+  onClick: (data: TranseferData) => void;
   buttonText: string;
-}> = ({ onClick, buttonText }) => (
+  loading: boolean;
+}> = ({ onClick, buttonText, loading }) => (
   <div className="Transfer dashboard-col-container">
     <div className="dashboard-left-col text-keysign-navy-blue-i Transfer__left">
       <div className="Transfer__heading heading">Transfer</div>
@@ -24,7 +27,9 @@ const Transfer: React.FC<{
               type="text"
               name="accountNumber"
             />
-            <button className="button Transfer__button">{buttonText}</button>
+            <Button loading={loading} className="button Transfer__button">
+              {buttonText}
+            </Button>
           </Form>
         )}
       </Formik>

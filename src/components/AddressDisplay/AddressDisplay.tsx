@@ -8,7 +8,7 @@ const AddressDisplay: React.FC<{ address: string; inputRef: React.RefObject<HTML
   inputRef,
 }) => (
   <div className="AddressDisplay">
-    <div>{shortenString(4, 6, address)}</div>
+    <div className="AddressDisplay__address">{shortenString(4, 6, address)}</div>
     <div className="strip-input">
       <input value={address} ref={inputRef} />
     </div>

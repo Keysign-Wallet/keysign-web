@@ -4,6 +4,7 @@ import { UserInterface, RequestStates } from './types';
 import * as getPVHandlers from './handlers/getPrimaryValidator';
 import * as getBalanceHandlers from './handlers/getBalance';
 import * as getTransactionsHandlers from './handlers/getTransactions';
+import * as transferHandlers from './handlers/transfer';
 import * as actionTypes from './actionTypes';
 
 const defaultRequestState: RequestStates = {
@@ -20,6 +21,7 @@ const initalState: UserInterface = {
     balance: { ...defaultRequestState },
     primaryValidator: { ...defaultRequestState },
     transactions: { ...defaultRequestState },
+    transfer: { ...defaultRequestState },
   },
   transactions: [],
   usdRate: 0.03,
@@ -55,6 +57,14 @@ const userReducer: Reducer<UserInterface> = (state = initalState, action) => {
       return getTransactionsHandlers.success(state, action);
     case actionTypes.USER_GET_TRANSACTIONS_FAILED:
       return getBalanceHandlers.failed(state, action);
+
+    // TRANSFER COINS
+    case actionTypes.USER_TRANSFER_REQUESTED:
+      return transferHandlers.requested(state);
+    case actionTypes.USER_TRANSFER_SUCCESSFUL:
+      return transferHandlers.success(state);
+    case actionTypes.USER_TRANSFER_FAILED:
+      return transferHandlers.failed(state, action);
     default:
       return state;
   }
