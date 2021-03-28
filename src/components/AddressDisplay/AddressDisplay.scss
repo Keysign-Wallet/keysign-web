@@ -3,11 +3,15 @@
   &__address {
     display: flex;
     align-items: center;
+    &:hover {
+      color: blue;
+      -webkit-text-decoration: slateblue solid underline;
+      text-decoration: slateblue solid underline;
+      -webkit-text-underline-position: under;
+      text-underline-position: under;
+    }
   }
   &__buttons {
     margin-left: 5px;
-  }
-  &:hover {
-    color: blue;
   }
 }
