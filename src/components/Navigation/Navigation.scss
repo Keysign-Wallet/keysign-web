@@ -4,12 +4,11 @@
 .Navigation {
   position: fixed;
   box-sizing: border-box;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05) !important;
   width: 100%;
   top: 0;
   z-index: 100000;
   border-bottom: 1px solid;
-  border-color: transparent;
+  border-color: #e8e8e8;
   transition: background-color 0.3s;
   a {
     color: inherit;
