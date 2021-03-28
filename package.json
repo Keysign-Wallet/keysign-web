@@ -1,6 +1,7 @@
 {
   "name": "keysign-web",
   "version": "0.1.0",
+  "proxy": "https://keysign.app",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.7",

@@ -12,7 +12,7 @@ import App from './App';
 
 const cache = new InMemoryCache();
 const link: any = new HttpLink({
-  uri: 'http://localhost:5555/graphql',
+  uri: 'http://localhost:3000/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
