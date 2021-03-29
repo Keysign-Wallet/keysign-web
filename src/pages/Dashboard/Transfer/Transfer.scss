@@ -12,6 +12,23 @@
       border-top: 0;
     }
   }
+  &__message {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  &__success {
+    $theme: rgb(81, 169, 81);
+    color: $theme;
+    border-color: $theme;
+  }
+  &__failed {
+    $theme: red;
+    color: $theme;
+    border-color: $theme;
+  }
   &__button {
     margin: 40px 0 0 0;
   }

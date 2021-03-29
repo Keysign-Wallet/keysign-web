@@ -8,7 +8,7 @@ export default () => {
   const {
     user: {
       requestStates: {
-        transfer: { requesting },
+        transfer: { requesting, failed, success },
       },
     },
   } = useSelector((state: ApplicationStore) => state);
@@ -23,7 +23,9 @@ export default () => {
   );
 
   return {
+    failed,
     requesting,
+    success,
     transferCoins,
   };
 };
