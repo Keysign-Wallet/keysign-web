@@ -1,0 +1,25 @@
+@keyframes LoaderSvgBounce {
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.Loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  svg {
+    height: 120px;
+    width: 120px;
+    animation: LoaderSvgBounce 4s infinite;
+  }
+  &__caption {
+    margin-top: 20px;
+  }
+}

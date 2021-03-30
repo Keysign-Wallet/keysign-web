@@ -30,6 +30,8 @@ import Signup from './pages/Signup/Signup';
 import Tos from './pages/Tos/Tos';
 import Transactions from './pages/Transactions/Transactions';
 import Wallet from './pages/Wallet/Wallet';
+import Loader from './components/common/Loader';
+import './App.scss';
 
 interface ProtectedRouteProps extends RouteProps {
   authenticated: boolean;
@@ -49,7 +51,9 @@ const App: FC = () => {
   }, [validateUser]);
 
   return validating ? (
-    <div>LOADING</div>
+    <div className="App__page-loader">
+      <Loader>Loading...</Loader>
+    </div>
   ) : (
     <Router>
       <Layout>

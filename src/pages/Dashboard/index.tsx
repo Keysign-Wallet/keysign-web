@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Loader from '../../components/common/Loader';
 import useDashboard from './hooks';
 import Dashboard from './Dashboard';
 
@@ -7,13 +8,7 @@ const DashboardContainer: React.FC = () => {
   useEffect(() => {
     initalizeDashboard();
   }, [initalizeDashboard]);
-  return loading ? (
-    <div>
-      <h1>LOADING</h1>
-    </div>
-  ) : (
-    <Dashboard />
-  );
+  return loading ? <Loader>Setting up your dashboard...</Loader> : <Dashboard />;
 };
 
 export default DashboardContainer;
