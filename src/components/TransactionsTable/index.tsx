@@ -8,7 +8,12 @@ import { TransactionType } from './types';
 
 const TransactionsTableContainer: React.FC<{ rowLimit?: number }> = ({ rowLimit }) => {
   const {
-    user: { transactions },
+    user: {
+      transactions,
+      requestStates: {
+        transactions: { requesting },
+      },
+    },
   } = useSelector((state: ApplicationStore) => state);
 
   const preparedTransactions = () => {
@@ -33,7 +38,7 @@ const TransactionsTableContainer: React.FC<{ rowLimit?: number }> = ({ rowLimit 
     );
   };
 
-  return <TransactionsTable transactions={preparedTransactions()} rowLimit={rowLimit} />;
+  return <TransactionsTable loading={requesting} transactions={preparedTransactions()} rowLimit={rowLimit} />;
 };
 
 export default TransactionsTableContainer;

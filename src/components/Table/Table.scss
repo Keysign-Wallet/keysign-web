@@ -7,7 +7,12 @@
     & > :last-child {
       flex: 0;
       min-width: 100px;
+      margin-right: 0px;
     }
+  }
+  &__placeholder {
+    margin-right: 15px;
+    height: 24px;
   }
   overflow-x: auto;
   & > * {

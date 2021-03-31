@@ -7,9 +7,10 @@ import { TransactionType } from './types';
 type TransactionsTableProps = {
   rowLimit?: number;
   transactions: TransactionType[];
+  loading: boolean;
 };
 
-const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit }: TransactionsTableProps) => {
+const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit, loading }: TransactionsTableProps) => {
   const title = 'Transactions';
   const headings = ['Sender', 'Recipient', 'Amount', 'Balance Key', 'Signature', 'Date Created'];
   const rows = transactions.map((transaction) => ({
@@ -24,7 +25,14 @@ const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit 
   }));
   return (
     <div className="TransactionsTable">
-      <Table title={title} headings={headings} rows={rows} rowLimit={rowLimit} />
+      <Table
+        title={title}
+        headings={headings}
+        rows={rows}
+        rowLimit={rowLimit}
+        loading={loading}
+        expectedRowCount={rows.length > 0 ? rows.length : 3}
+      />
     </div>
   );
 };
