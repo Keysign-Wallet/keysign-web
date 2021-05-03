@@ -16,7 +16,7 @@ const defaultRequestState: RequestStates = {
 const initalState: UserInterface = {
   accountNumber: '',
   balance: 0,
-  bank: { bank: new Bank('http://13.57.215.62'), name: '', primaryValidator: null },
+  bank: { bank: new Bank('http://54.177.121.3'), name: '', primaryValidator: null },
   requestStates: {
     balance: { ...defaultRequestState },
     primaryValidator: { ...defaultRequestState },
