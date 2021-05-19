@@ -7,6 +7,9 @@
     & > :nth-child(2) {
       margin-left: auto;
     }
+    @media (max-width: 585px) {
+      width: 100vw;
+    }
   }
   &__back-button {
     background-color: transparent;
