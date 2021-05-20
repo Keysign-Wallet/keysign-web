@@ -89,6 +89,11 @@
       display: none;
     }
   }
+  @media (max-width: 507px) {
+    &__button-link-2 {
+      display: none;
+    }
+  }
   &__button-link-1 {
     margin-left: 30px;
     .button {

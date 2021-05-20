@@ -58,12 +58,15 @@ const Navigation: React.FC<{ className: string; isLoggedIn: boolean; logout: () 
                 Download
               </NavLink>
             </li>
-          </ul>
-          <div className="Navigation__right">
-            <div className="Navigation__right_menu">
-            <NavLink to={URLS.account} activeClassName="selected">
+            <li>
+              <NavLink to={URLS.account} activeClassName="selected">
                 Account
               </NavLink>
+            </li>
+          </ul>
+          <div className="Navigation__right">
+            <NavDropDown loggedIn />
+            <div className="Navigation__right_menu">
               <div className="Navigation__right_menu_line background-keysign-offwhite" />
               <button className="Navigation__right_menu_logout" onClick={logout}>
                 <LogoutSvg />

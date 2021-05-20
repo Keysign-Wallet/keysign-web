@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavDropDown from './NavDropDown';
 
-const NavDropDownContainer: React.FC<{loggedIn: boolean}> = ({loggedIn}) => {
+const NavDropDownContainer: React.FC<{ loggedIn: boolean }> = ({ loggedIn }) => {
   const [open, setOpen] = useState(false);
   const handler = () => {
     setOpen(!open);
