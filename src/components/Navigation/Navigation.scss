@@ -79,7 +79,13 @@
     }
   }
   @media (max-width: 769px) {
-    & > :not(:nth-child(1)):not(:nth-child(2)) {
+    &__items-list {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .DropDown {
       display: none;
     }
   }

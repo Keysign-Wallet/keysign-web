@@ -10,6 +10,7 @@ export const URLS = {
   downloads: '/downloads',
   faq: '/faq',
   history: '/history',
+  integration: '/integration',
   landing: '/',
   login: '/login',
   mobile: '/mobile',

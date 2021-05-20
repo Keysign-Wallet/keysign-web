@@ -5,7 +5,7 @@ import { mergeClasses } from '../../../utils/helpers';
 import DropDown from '../../common/DropDown';
 import './NavDropDown.scss';
 
-const NavDropDown: React.FC<{ open: boolean; handler: () => void }> = ({ open, handler }) => (
+const NavDropDown: React.FC<{ open: boolean; handler: () => void, loggedIn: boolean }> = ({ open, handler }) => (
   <DropDown
     delay={300}
     onAppearStart={handler}
@@ -22,7 +22,6 @@ const NavDropDown: React.FC<{ open: boolean; handler: () => void }> = ({ open, h
         !open && 'NavDropDown__close'
       )}
     >
-      <div className="NavDropDown__title">Account</div>
       <li>
         <NavLink
           to="/settings"
