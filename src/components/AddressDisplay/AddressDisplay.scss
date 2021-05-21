@@ -1,5 +1,14 @@
 .AddressDisplay {
   display: flex;
+  color: #1565d8;
+  &__address {
+    display: flex;
+    align-items: center;
+    &:hover {
+      -webkit-text-decoration: #1565d8 solid underline;
+      text-decoration: #1565d8 solid underline;
+    }
+  }
   &__buttons {
     margin-left: 5px;
   }

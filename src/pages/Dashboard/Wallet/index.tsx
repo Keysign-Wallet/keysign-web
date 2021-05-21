@@ -1,20 +1,38 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as Transfer } from '../../../assets/svgs/transfer.svg';
-import DashboardContext from '../DashboardContext';
+import { setHeaderElement } from '../../../redux/Dashboard/actionCreators';
+import { ApplicationStore } from '../../../redux/types';
 import Wallet from './Wallet';
 
 const WalletContainer: React.FC = () => {
-  const { setHeaderEl } = useContext(DashboardContext);
+  const dispatch = useDispatch();
+  const { push } = useHistory();
+  const { user } = useSelector((state: ApplicationStore) => state);
+  const signingKeyRef = useRef<HTMLInputElement>(null);
+  const addressRef = useRef<HTMLInputElement>(null);
+
+  const handleClick = useCallback(() => {
+    push('/dashboard/transfer');
+  }, [push]);
+
   useEffect(() => {
-    setHeaderEl(
-      <button className="TransferButton button">
-        <Transfer />
-        Transfer
-      </button>
+    dispatch(
+      setHeaderElement(
+        <button className="TransferButton button" onClick={handleClick}>
+          <Transfer />
+          Transfer
+        </button>
+      )
     );
-    return () => setHeaderEl(null);
-  }, [setHeaderEl]);
-  return <Wallet />;
+    return () => {
+      dispatch(setHeaderElement(null));
+    };
+  }, [dispatch, handleClick]);
+  return (
+    <Wallet balance={user.balance} addressRef={addressRef} signingKeyRef={signingKeyRef} address={user.accountNumber} />
+  );
 };
 
 export default WalletContainer;

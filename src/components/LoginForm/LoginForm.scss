@@ -6,11 +6,8 @@
       display: block;
       width: 100%;
     }
-    & > :nth-child(1) {
+    & > input {
       margin-bottom: 20px;
-    }
-    & > :nth-child(2) {
-      margin-bottom: 40px;
     }
   }
 }

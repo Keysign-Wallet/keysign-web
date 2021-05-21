@@ -1,0 +1,24 @@
+.DropDown {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.reveal-drop-down-menu {
+    .drop-down-menu {
+      display: block !important;
+    }
+  }
+
+  .drop-down-menu {
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    display: none;
+    width: fit-content;
+  }
+}

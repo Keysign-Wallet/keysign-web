@@ -14,11 +14,11 @@ enum Page {
 const renderSelectedPage = (page: Page) => {
   switch (page) {
     case Page.SETTINGS:
-      return <Settings />
+      return <Settings />;
     case Page.SECURITY:
-      return <Security />
+      return <Security />;
     case Page.DELETE_ACCOUNT:
-      return <DeleteAccount />
+      return <DeleteAccount />;
     default:
       return <p>invalid page selected</p>;
   }

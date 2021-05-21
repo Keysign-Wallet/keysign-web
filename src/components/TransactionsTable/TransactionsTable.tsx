@@ -2,36 +2,37 @@ import React, { FC } from 'react';
 
 import Table from '../Table';
 import { shortenString } from '../../utils/helpers';
+import { TransactionType } from './types';
 
 type TransactionsTableProps = {
-  transactions: {
-    sender: string;
-    recipient: string;
-    amount: number;
-    balance_key: string;
-    signature: string;
-    date_created: string;
-  }[];
+  rowLimit?: number;
+  transactions: TransactionType[];
+  loading: boolean;
 };
 
-const TransactionsTable: FC<TransactionsTableProps> = ({ transactions }: TransactionsTableProps) => {
+const TransactionsTable: FC<TransactionsTableProps> = ({ transactions, rowLimit, loading }: TransactionsTableProps) => {
   const title = 'Transactions';
   const headings = ['Sender', 'Recipient', 'Amount', 'Balance Key', 'Signature', 'Date Created'];
-  const rows = [
-    [
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      '26,000',
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      shortenString(4, 3, 'KU3efgfgdfgdfgttrtrqrges0bhwe'),
-      'Jun 12, 2020',
+  const rows = transactions.map((transaction) => ({
+    row: [
+      shortenString(4, 3, transaction.sender),
+      shortenString(4, 3, transaction.recipient),
+      Number(transaction.amount).toLocaleString(),
+      shortenString(4, 3, transaction.balance_key),
+      shortenString(4, 3, transaction.signature),
+      transaction.date_created,
     ],
-  ];
-  // eslint-disable-next-line no-console
-  console.log(transactions);
+  }));
   return (
     <div className="TransactionsTable">
-      <Table title={title} headings={headings} rows={rows} />
+      <Table
+        title={title}
+        headings={headings}
+        rows={rows}
+        rowLimit={rowLimit}
+        loading={loading}
+        expectedRowCount={rows.length > 0 ? rows.length : 3}
+      />
     </div>
   );
 };

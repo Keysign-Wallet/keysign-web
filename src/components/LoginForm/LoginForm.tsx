@@ -1,82 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { loginFormSchema } from './constats';
+import Button from '../common/Button';
+import { LoginFormType } from './types';
 
-import './LoginForm.scss';
-import { useMutation } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
-import { useHistory } from 'react-router-dom';
-import { Account } from 'thenewboston';
-import BrowserStorageService from '../../services/browserStorageService';
-import LoggerService from '../../services/loggerService';
-import EncryptionService from '../../services/encryptionService';
-
-const LOGIN_QUERY = gql`
-  mutation login($accountNumber: String!) {
-    login(accountNumber: $accountNumber) {
-      token
-      newUser
-    }
-  }
-`;
-
-const LoginForm: React.FC = () => {
-  const [login, { data }] = useMutation(LOGIN_QUERY);
-  const history = useHistory();
-
-  const [accountNumber, updateAccountNumber] = useState('');
-  const [signingKey, updateSigningKey] = useState('');
-  const loginHandler = (e: any) => {
-    e.preventDefault();
-    if (Account.isValidPair(signingKey, accountNumber)) {
-      login({ variables: { accountNumber } })
-        .then((res) => {
-          LoggerService.log(data);
-          const encryptedSigningKey = EncryptionService.encryptData(signingKey);
-          BrowserStorageService.setItem('token', res.data.login.token);
-          BrowserStorageService.setItem('signingKey', encryptedSigningKey);
-          BrowserStorageService.setItem('keysign', false);
-          BrowserStorageService.setItem('accountNumber', accountNumber);
-          if (res.data.login.newUser === true) {
-            // send them to account setup.
-            history.push('/setup');
-          } else {
-            // send them to wallet page.
-            history.push('/wallet');
-          }
-        })
-        .catch((err) => {
-          LoggerService.log(err);
-        });
-    }
-  };
-
+const LoginForm: React.FC<LoginFormType> = ({ loginHandler, loading, initialValues }) => {
   return (
     <div className="LoginForm">
       <h1 className="text-keysign-dark heading">Login</h1>
       <h2 className="text-keysign-grey paragraph">Welcome to Keysign</h2>
-      <form className="LoginForm__form">
-        <div className="LoginForm__inputs-wrapper">
-          <input
-            type="text"
-            className="input"
-            placeholder="Account Number"
-            value={accountNumber}
-            onChange={(e) => {
-              e.preventDefault();
-              updateAccountNumber(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="input"
-            placeholder="Signing Key"
-            value={signingKey}
-            onChange={(e) => updateSigningKey(e.target.value)}
-          />
-        </div>
-        <button className="button" onClick={loginHandler}>
-          Login
-        </button>
-      </form>
+      <Formik initialValues={initialValues} validationSchema={loginFormSchema} onSubmit={loginHandler}>
+        {() => (
+          <Form className="LoginForm__form">
+            <div className="LoginForm__inputs-wrapper">
+              <ErrorMessage name="accountNumber" component="span" className="formInputError" />
+              <Field type="text" className="input" placeholder="Account Number" name="accountNumber" />
+              <ErrorMessage name="signingKey" component="span" className="formInputError" />
+              <Field type="text" className="input" placeholder="Signing Key" name="signingKey" />
+            </div>
+            <Button loading={loading}>Login</Button>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };

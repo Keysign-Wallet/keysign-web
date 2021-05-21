@@ -32,4 +32,23 @@ export default class ExtensionHelperService {
       });
     });
   }
+
+  static transferWithKeysign(accountNumber: string, amount: number, bankUrl: string): Promise<KSLoginResult> {
+    return new Promise((resolve, reject) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      tnb_keysign.requestTransfer(
+        accountNumber,
+        amount,
+        (res: any) => {
+          if (res.success) {
+            resolve(res.data);
+          } else {
+            reject(res.data);
+          }
+        },
+        bankUrl
+      );
+    });
+  }
 }

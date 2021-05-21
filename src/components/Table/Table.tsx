@@ -1,8 +1,9 @@
 import React from 'react';
-import { TableItemType } from './types';
+import { mergeClasses } from '../../utils/helpers';
+import { TableItemType, RowType } from './types';
 import './Table.scss';
 
-const Table: React.FC<{ headings: TableItemType[]; rows: TableItemType[][]; title: TableItemType }> = ({
+const Table: React.FC<{ headings: TableItemType[]; rows: RowType[]; title: TableItemType }> = ({
   headings,
   rows,
   title,
@@ -36,8 +37,13 @@ const Table: React.FC<{ headings: TableItemType[]; rows: TableItemType[][]; titl
       <div>$234,878</div>
     </div> */}
     {/* Remember to Use a unique key instead of index */}
-    {rows.map((row, i) => (
-      <div className="Table__row border-keysign-offwhite-i text-keysign-dark-i" key={i}>
+    {rows.map(({ rowProps = {}, row }, i) => (
+      <div
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rowProps}
+        className={mergeClasses('Table__row border-keysign-offwhite-i text-keysign-dark-i', rowProps.className)}
+        key={rowProps.key || i}
+      >
         {row.map((rowData, index) => (typeof rowData === 'function' ? rowData() : <div key={index}>{rowData}</div>))}
       </div>
     ))}

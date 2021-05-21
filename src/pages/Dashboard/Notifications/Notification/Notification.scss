@@ -1,0 +1,82 @@
+@import '../../../../index.scss';
+
+@keyframes NotificationAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes NotificationDisappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.Notification {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-color: #1565d8;
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  animation: NotificationAppear 0.3s forwards;
+  opacity: 0;
+  &__disappear {
+    animation: NotificationDisappear 0.3s forwards;
+  }
+  &__content {
+    margin-left: 20px;
+    max-width: 250px;
+  }
+  &__icon {
+    height: 40px;
+    width: 40px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    & > div {
+      height: 70%;
+      width: 70%;
+      border-radius: 100%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > svg {
+        height: 40%;
+        width: 40%;
+      }
+    }
+  }
+  &__close_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    margin-left: 50px;
+    &:hover {
+      background-color: white;
+    }
+    svg {
+      height: 9px;
+      width: 9px;
+      path {
+        fill: map-get($colors, grey);
+      }
+    }
+  }
+}

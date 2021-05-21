@@ -1,10 +1,13 @@
 @import '../../index.scss';
 
-$dashboard-width: 1090px;
+$dashboard-width: 1280px;
 $left-col-width: 330px;
 
 .dashboard-col-container {
   display: flex;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
 }
 .dashboard-left-col {
   max-width: $left-col-width;

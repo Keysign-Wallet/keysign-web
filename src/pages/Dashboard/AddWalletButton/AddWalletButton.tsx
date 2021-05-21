@@ -1,13 +1,13 @@
 import React from 'react';
-import { ReactComponent as PlusIcon } from '../../../assets/svgs/plusicon.svg';
+// import { ReactComponent as PlusIcon } from '../../../assets/svgs/plusicon.svg';
 import './AddWalletButton.scss';
 
 const AddWalletButton: React.FC = () => (
   <button className="AddWalletButton text-keysign-primary">
-    <div className="background-keysign-pale-blue AddWalletButton__icon">
+    {/* <div className="background-keysign-pale-blue AddWalletButton__icon">
       <PlusIcon />
-    </div>
-    <h2>Add Wallet</h2>
+    </div> */}
+    <h2>Wallet</h2>
   </button>
 );
 

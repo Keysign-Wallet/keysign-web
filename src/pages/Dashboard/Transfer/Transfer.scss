@@ -2,13 +2,43 @@
   text-align: center;
   &__right {
     border: none !important;
+    text-align: left;
   }
   &__left {
     padding: 25px 20px;
     box-sizing: border-box;
+    height: fit-content;
+    & > hr {
+      border-top: 0;
+    }
   }
-  &__input {
+  &__message {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  &__success {
+    $theme: rgb(81, 169, 81);
+    color: $theme;
+    border-color: $theme;
+  }
+  &__failed {
+    $theme: red;
+    color: $theme;
+    border-color: $theme;
+  }
+  &__button {
+    margin: 40px 0 0 0;
+  }
+  hr {
+    margin: 40px 0;
+  }
+  input {
     width: 100%;
-    margin: 10px 0;
+  }
+  &__amount-input {
+    margin: 0 0 10px 0;
   }
 }
