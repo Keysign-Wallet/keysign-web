@@ -8,21 +8,21 @@ import EncryptionService from '../services/encryptionService';
 const useLogin = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const loginSuccess = (res: any, accountNumber: string, signingKey?: string) => {
+  const loginSuccess = (accountNumber: string, signingKey?: string) => {
     const encryptedSigningKey = EncryptionService.encryptData(signingKey);
-    BrowserStorageService.setItem('token', res.data.login.token);
+    // BrowserStorageService.setItem('token', res.data.login.token);
     BrowserStorageService.setItem('signingKey', encryptedSigningKey);
     BrowserStorageService.setItem('keysign', !signingKey);
     if (accountNumber) BrowserStorageService.setItem('accountNumber', accountNumber);
     dispatch(setAccount(accountNumber));
     dispatch(logUserIn());
-    if (res.data.login.newUser === true) {
-      // send them to account setup.
-      history.push('/setup');
-    } else {
-      // send them to wallet page.
-      history.push('/dashboard/wallet');
-    }
+    // if (res.data.login.newUser === true) {
+    // send them to account setup.
+    history.push('/setup');
+    // } else {
+    // send them to wallet page.
+    history.push('/dashboard/wallet');
+    // }
   };
   return {
     loginSuccess,

@@ -29,8 +29,8 @@ const LoginFormContainer: React.FC = () => {
     const { accountNumber, signingKey } = fieldValues;
     if (Account.isValidPair(signingKey, accountNumber)) {
       login({ variables: { accountNumber } })
-        .then((res) => {
-          loginSuccess(res, accountNumber, signingKey);
+        .then(() => {
+          loginSuccess(accountNumber, signingKey);
         })
         .catch((err) => {
           LoggerService.log(err);

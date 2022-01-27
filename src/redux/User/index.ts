@@ -16,7 +16,7 @@ const defaultRequestState: RequestStates = {
 const initalState: UserInterface = {
   accountNumber: '',
   balance: 0,
-  bank: { bank: new Bank('http://54.177.121.3'), name: '', primaryValidator: null },
+  bank: { bank: new Bank('http://54.183.16.194'), name: '', primaryValidator: null },
   requestStates: {
     balance: { ...defaultRequestState },
     primaryValidator: { ...defaultRequestState },
@@ -24,7 +24,7 @@ const initalState: UserInterface = {
     transfer: { ...defaultRequestState },
   },
   transactions: [],
-  usdRate: 0.03,
+  usdRate: 0.015,
 };
 
 const userReducer: Reducer<UserInterface> = (state = initalState, action) => {
