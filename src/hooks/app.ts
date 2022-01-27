@@ -9,12 +9,11 @@ const useApp = () => {
   const [validating, setValidating] = useState(true);
 
   const validateUser = useCallback(() => {
-    const token = BrowserStorageService.getItem('token');
     const signingKey = BrowserStorageService.getItem('signingKey');
     const accountNumber = BrowserStorageService.getItem('accountNumber');
 
     // Update when we start using sessions
-    if (!token || !signingKey || !accountNumber) {
+    if (!signingKey || !accountNumber) {
       setValidating(false);
       logUserOut();
     } else {

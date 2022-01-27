@@ -1,17 +1,17 @@
 export default class BrowserStorageService {
   static setItem(key: string, data: any) {
-    localStorage.setItem(key, data);
+    sessionStorage.setItem(key, data);
   }
 
   static clearItem(key: string) {
-    localStorage.removeItem(key);
+    sessionStorage.removeItem(key);
   }
 
   static clearStorage() {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 
   static getItem(key: string) {
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
   }
 }
