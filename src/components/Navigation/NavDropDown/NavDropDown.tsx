@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import DropDown from 'unop-react-dropdown';
 import { ReactComponent as ArrowSvg } from '../../../assets/svgs/downArrow.svg';
 import { mergeClasses } from '../../../utils/helpers';
-import DropDown from '../../common/DropDown';
 import './NavDropDown.scss';
 
 const NavDropDown: React.FC<{ open: boolean; handler: () => void }> = ({ open, handler }) => (
   <DropDown
     delay={300}
-    onAppearStart={handler}
+    onAppear={handler}
     onDisappearStart={handler}
+    closeOnClickOut
+    closeOnDropdownClicked
     trigger={
       <button className="Navigation__right_menu_arrow">
         <ArrowSvg />
