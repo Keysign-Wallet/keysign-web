@@ -64,4 +64,10 @@
       }
     }
   }
+
+  .TabSwitch_tab-btn:first-of-type {
+    @media screen and (max-width: 400px) {
+      display: block;
+    }
+  }
 }
