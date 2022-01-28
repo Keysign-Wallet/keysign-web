@@ -13,7 +13,7 @@ const DropDown: React.FC<DropDownProps> = ({
   style,
 }) => (
   <div
-    className={mergeClasses('DropDown', show && 'reveal-drop-down-menu')}
+    className={mergeClasses('DropDown', [show, 'reveal-drop-down-menu'])}
     onMouseLeave={handleMouseLeave}
     onMouseOver={handleMouseOver}
     onFocus={() => {}}

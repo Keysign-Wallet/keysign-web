@@ -17,10 +17,10 @@ const NavDropDown: React.FC<{ open: boolean; handler: () => void }> = ({ open, h
     }
   >
     <ul
-      className={mergeClasses(
-        'NavDropDown background-keysign-light keysign-default-border',
-        !open && 'NavDropDown__close'
-      )}
+      className={mergeClasses('NavDropDown background-keysign-light keysign-default-border', [
+        !open,
+        'NavDropDown__close',
+      ])}
     >
       <div className="NavDropDown__title">Account</div>
       <li>

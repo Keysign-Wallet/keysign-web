@@ -9,7 +9,7 @@ interface ButtonProps
 
 const Button: React.FC<ButtonProps> = ({ children, className, loading, ...rest }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
-  <button className={mergeClasses(className, 'button')} disabled={loading} {...rest}>
+  <button className={mergeClasses(className || '', 'button')} disabled={loading} {...rest}>
     {loading ? <Loader /> : children}
   </button>
 );

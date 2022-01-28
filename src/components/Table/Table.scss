@@ -1,28 +1,28 @@
 .Table {
+  $left-padding: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  td {
+    min-width: 80px;
+  }
   @mixin row-styles {
-    display: flex;
     height: 60px;
-    align-items: center;
-    border-top: 1px solid;
-    & > :last-child {
-      flex: 0;
-      min-width: 100px;
-      margin-right: 0px;
-    }
   }
   &__placeholder {
     margin-right: 15px;
     height: 24px;
   }
   overflow-x: auto;
-  & > * {
-    padding: 0 30px;
-  }
   &__header {
+    padding-left: $left-padding;
     height: 70px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
   }
   &__heading {
     font-weight: normal;
@@ -30,20 +30,43 @@
     font-weight: 500;
   }
   &__col-headings {
-    @include row-styles;
-    > * {
-      font-size: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      flex: 1 1 0px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    tr {
+      @include row-styles;
+      border-top: 0px;
+      width: 100%;
+      & > :nth-child(1) {
+        padding-left: $left-padding;
+      }
     }
   }
   &__row {
-    @include row-styles;
-    > * {
-      font-size: 14px;
-      font-weight: bold;
-      flex: 1 1 0px;
+    & > :last-child {
+      border-bottom: 0px;
     }
+    tr {
+      @include row-styles;
+      border-left: 0;
+      border-right: 0;
+      width: 100%;
+      & > :nth-child(1) {
+        padding-left: $left-padding;
+      }
+      td {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-top: 0px !important;
+    box-sizing: border-box;
   }
 }
